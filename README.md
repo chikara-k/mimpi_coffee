@@ -24,25 +24,25 @@
 ### 機能一覧
 <https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0>
 
-# 開発環境
+## 開発環境
 - OS:Linux(CentOS)
 - DB:SQLite
 - IDE:Cloud9
 
-# フロントエンド
+## フロントエンド
 - Bootstrap 4.5
 - CSS(BEM)
 - JavaScript、jQuery、Ajax
 
-# バックエンド
+## バックエンド
 - Ruby 2.6.3
 - Rails 5.2.5
 
-# 本番環境
+## 本番環境
 - AWS(EC2、 RDS for MySQL)
 - MySQL
 - Nginx、 Puma
 
-# テスト
+## テスト
 - RSpec
 - GithubActions(CI/CD)
