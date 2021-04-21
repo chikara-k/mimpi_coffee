@@ -24,7 +24,7 @@
 ### 機能一覧
 <https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0>
 
-## 　環境・使用技術
+## 環境・使用技術
 ### 開発環境
 - OS:Linux(CentOS)
 - DB:SQLite
