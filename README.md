@@ -25,8 +25,24 @@
 <https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0>
 
 ## 開発環境
-- OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
-- 仮想環境：Vagrant,VirtualBox
+- OS:Linux(CentOS)
+- DB:SQLite
+- IDE:Cloud9
+
+## フロントエンド
+- Bootstrap 4.5
+- CSS(BEM)
+- JavaScript、jQuery、Ajax
+
+## バックエンド
+- Ruby 2.6.3
+- Rails 5.2.5
+
+## 本番環境
+- AWS(EC2、 RDS for MySQL)
+- MySQL
+- Nginx、 Puma
+
+## テスト
+- RSpec
+- GithubActions(CI/CD)
