@@ -45,7 +45,6 @@ https://drive.google.com/file/d/1iog5KFNkBpvBs-NrXtXJWD5-oDCgp_Xy/view?usp=shari
 
 ### フロントエンド
 - Bootstrap 4.5
-- CSS(BEM)
 - JavaScript、jQuery、Ajax
 
 ### バックエンド
