@@ -23,10 +23,10 @@
 ## 機能一覧・設計図
 
 ### 機能一覧
-<https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0>
+https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0
 
 ### 画面遷移図
-https://drive.google.com/drive/u/0/my-drive
+https://drive.google.com/file/d/13SttR0qXDyXVipNh4NZtnad7bXi7rnCc/view?usp=sharing
 
 ### ER図
 
