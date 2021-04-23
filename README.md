@@ -26,7 +26,7 @@
 https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0
 
 ### 画面遷移図
-https://drive.google.com/file/d/13SttR0qXDyXVipNh4NZtnad7bXi7rnCc/view?usp=sharing
+https://drive.google.com/file/d/1iog5KFNkBpvBs-NrXtXJWD5-oDCgp_Xy/view?usp=sharing
 
 ### ER図
 
