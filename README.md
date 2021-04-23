@@ -29,13 +29,13 @@ https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2
 https://drive.google.com/file/d/1iog5KFNkBpvBs-NrXtXJWD5-oDCgp_Xy/view?usp=sharing
 
 ### ER図
-
+作成中
 
 ### テーブル定義書
-
+作成中
 
 ### 詳細設計書
-
+作成中
 
 ## 環境・使用技術
 ### 開発環境
