@@ -32,7 +32,7 @@ https://drive.google.com/file/d/1iog5KFNkBpvBs-NrXtXJWD5-oDCgp_Xy/view?usp=shari
 https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing
 
 ### テーブル定義書
-作成中
+https://docs.google.com/spreadsheets/d/1pejckANbwZZGfgga_1cYTebJdFUQUvgd1xTOD9PQEcs/edit?usp=sharing
 
 ### 詳細設計書
 作成中
