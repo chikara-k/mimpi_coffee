@@ -35,7 +35,7 @@ https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=shari
 https://docs.google.com/spreadsheets/d/1pejckANbwZZGfgga_1cYTebJdFUQUvgd1xTOD9PQEcs/edit?usp=sharing
 
 ### 詳細設計書
-作成中
+https://drive.google.com/file/d/1d1iHwrQb43sJXII_D6hCGHzmM_PNdMO5/view?usp=sharing
 
 ## 環境・使用技術
 ### 開発環境
