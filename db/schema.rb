@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_04_30_034114) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -62,14 +63,15 @@ ActiveRecord::Schema.define(version: 2021_04_30_034114) do
   create_table "items", force: :cascade do |t|
     t.integer "genre_id"
     t.string "name", null: false
-    t.string "image_id"
-    t.integer "taste_bitter", default: 0, null: false
-    t.integer "taste_sour", default: 0, null: false
-    t.integer "taste_aroma", default: 0, null: false
-    t.integer "taste_body", default: 0, null: false
-    t.text "introduction"
+    t.string "image_id", null: false
+    t.integer "taste_bitter", default: 0
+    t.integer "taste_sour", default: 0
+    t.integer "taste_aroma", default: 0
+    t.integer "taste_body", default: 0
+    t.integer "roasting_level", default: 0
+    t.text "introduction", null: false
     t.integer "price", null: false
-    t.boolean "is_active", default: true, null: false
+    t.boolean "is_sales", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
