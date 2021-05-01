@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 2021_04_30_034114) do
     t.integer "genre_id"
     t.string "name", null: false
     t.string "image_id", null: false
-    t.integer "taste_bitter", default: 0
-    t.integer "taste_sour", default: 0
-    t.integer "taste_aroma", default: 0
-    t.integer "taste_body", default: 0
-    t.integer "roasting_level", default: 0
-    t.text "introduction", null: false
+    t.integer "taste_bitter"
+    t.integer "taste_sour"
+    t.integer "taste_aroma"
+    t.integer "taste_body"
+    t.integer "roasting_level"
+    t.text "introduction"
     t.integer "price", null: false
     t.boolean "is_sales", default: true
     t.datetime "created_at", null: false

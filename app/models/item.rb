@@ -6,12 +6,12 @@ class Item < ApplicationRecord
   attachment :image
   
   validates :name, presence: true
-  validates :taste_bitter, presence: true
-  validates :taste_sour, presence: true
-  validates :taste_aroma, presence: true
-  validates :taste_body, presence: true
-  validates :roasting_level, presence: true
-  validates :introduction, presence: true
+  # validates :taste_bitter, presence: true
+  # validates :taste_sour, presence: true
+  # validates :taste_aroma, presence: true
+  # validates :taste_body, presence: true
+  # validates :roasting_level, presence: true
+  # validates :introduction, presence: true
   validates :price, presence: true
   validates :is_sales, inclusion:{in: [true, false]}
   
