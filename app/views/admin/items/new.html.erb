@@ -2,7 +2,7 @@
   <h2>商品新規登録</h2>
     <div class="row">
       <div class="my-1">
-        <%= form_with model:@item,url: admin_items_path(@item),local:true do |f| %>
+        <%= form_with model:@item, url: admin_items_path(@item), local:true do |f| %>
           <table class="table table-borderless">
             <tr class="d-flex">
               <th class="col-4"><%= f.label :"商品画像" %></th>
@@ -16,92 +16,92 @@
             <tr class="d-flex">
               <th class="col-4"><%= f.label :"苦味" %></th>
               <td class="col-2">
-                <%= f.radio_button :taste_bitter, 0 %>
+                <%= f.radio_button :taste_bitter, 1 %>
                 <%= f.label :taste_bitter, "1" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_bitter, 1 %>
+                <%= f.radio_button :taste_bitter, 2 %>
                 <%= f.label :taste_bitter, "2" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_bitter, 2 %>
+                <%= f.radio_button :taste_bitter, 3 %>
                 <%= f.label :taste_bitter, "3" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_bitter, 3 %>
+                <%= f.radio_button :taste_bitter, 4 %>
                 <%= f.label :taste_bitter, "4" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_bitter, 4 %>
+                <%= f.radio_button :taste_bitter, 5 %>
                 <%= f.label :taste_bitter, "5" %>
               </td>
             </tr>
             <tr class="d-flex">
               <th class="col-4"><%= f.label :"酸味" %></th>
               <td class="col-2">
-                <%= f.radio_button :taste_sour, 0 %>
+                <%= f.radio_button :taste_sour, 1 %>
                 <%= f.label :taste_sour, "1" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_sour, 1 %>
+                <%= f.radio_button :taste_sour, 2 %>
                 <%= f.label :taste_sour, "2" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_sour, 2 %>
+                <%= f.radio_button :taste_sour, 3 %>
                 <%= f.label :taste_sour, "3" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_sour, 3 %>
+                <%= f.radio_button :taste_sour, 4 %>
                 <%= f.label :taste_sour, "4" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_sour, 4 %>
+                <%= f.radio_button :taste_sour, 5 %>
                 <%= f.label :taste_sour, "5" %>
               </td>
             </tr>
             <tr class="d-flex">
               <th class="col-4"><%= f.label :"香り" %></th>
               <td class="col-2">
-                <%= f.radio_button :taste_aroma, 0 %>
+                <%= f.radio_button :taste_aroma, 1 %>
                 <%= f.label :taste_aroma, "1" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_aroma, 1 %>
+                <%= f.radio_button :taste_aroma, 2 %>
                 <%= f.label :taste_aroma, "2" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_aroma, 2 %>
+                <%= f.radio_button :taste_aroma, 3 %>
                 <%= f.label :taste_aroma, "3" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_aroma, 3 %>
+                <%= f.radio_button :taste_aroma, 4 %>
                 <%= f.label :taste_aroma, "4" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_aroma, 4 %>
+                <%= f.radio_button :taste_aroma, 5 %>
                 <%= f.label :taste_aroma, "5" %>
               </td>
             </tr>
             <tr class="d-flex">
               <th class="col-4"><%= f.label :"コク" %></th>
               <td class="col-2">
-                <%= f.radio_button :taste_body, 0 %>
+                <%= f.radio_button :taste_body, 1 %>
                 <%= f.label :taste_body, "1" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_body, 1 %>
+                <%= f.radio_button :taste_body, 2 %>
                 <%= f.label :taste_body, "2" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_body, 2 %>
+                <%= f.radio_button :taste_body, 3 %>
                 <%= f.label :taste_body, "3" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_body, 3 %>
+                <%= f.radio_button :taste_body, 4 %>
                 <%= f.label :taste_body, "4" %>
               </td>
               <td class="col-2">
-                <%= f.radio_button :taste_body, 4 %>
+                <%= f.radio_button :taste_body, 5 %>
                 <%= f.label :taste_body, "5" %>
               </td>
             </tr>
