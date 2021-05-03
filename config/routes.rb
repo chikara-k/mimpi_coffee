@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   }
 
   devise_scope :admins do
-  get 'admins/sign_in' => 'admins/sessions#create'
-	get 'admins/sign_out' => 'admins/sessions#destroy'
+   get 'admins/sign_in' => 'admins/sessions#create'
+	 get 'admins/sign_out' => 'admins/sessions#destroy'
   end
 
 
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :items
     resources :genres, only: [:index, :edit, :create, :update, :destroy]
+    resources :customers, only: [:index, :show, :edit, :update]
+    resources :orders, only: [:index, :show, :update]
   end
 
 
@@ -25,8 +27,8 @@ Rails.application.routes.draw do
   }
 
   devise_scope :customers do
-	get 'customers/sign_in' => 'customers/sessions#create'
-	get 'customers/sign_out' => 'customers/sessions#destroy'
+	 get 'customers/sign_in' => 'customers/sessions#create'
+	 get 'customers/sign_out' => 'customers/sessions#destroy'
   end
 
 

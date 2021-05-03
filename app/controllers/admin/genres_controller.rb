@@ -1,4 +1,6 @@
 class Admin::GenresController < ApplicationController
+   #？ before_action :authenticate_admin!  全部完了したらコメント外す
+  
   def index
     @genre = Genre.new
     @genres = Genre.all

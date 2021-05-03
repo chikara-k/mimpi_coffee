@@ -5,10 +5,8 @@
     <%= flash[:success] %>
     <%= form_with model: @genre, url: admin_genres_path,local:true do |f| %>
       <div class="form-group">
-        <%= f.label :"ジャンル名" %>
+        <%= f.label :"ジャンル名" %> 
         <%= f.text_field :name %>
-      </div>
-      <div>
         <%= f.submit "新規登録", class: "btn btn-outline-success" %>
       </div>
     <% end %>

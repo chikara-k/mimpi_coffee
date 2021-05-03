@@ -1,13 +1,11 @@
 <div class="container">
  <div class="row">
-   <div class="col-4">
+   <div class="col-lg-6">
     <h2>ジャンル編集</h2>
     <%= form_with model:@genre, url: admin_genre_path(@genre.id), local:true do |f| %>
       <div>
         <%= f.label :"ジャンル名" %>
         <%= f.text_field :name %>
-      </div>
-      <div>
         <%= f.submit "変更保存", class: "btn btn-outline-success" %>
       </div>
     <% end %>
