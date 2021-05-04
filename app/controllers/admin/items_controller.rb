@@ -38,6 +38,16 @@ class Admin::ItemsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      flash[:success] = "商品内容を削除しました"
+      redirect_to admin_items_path
+    else
+      render :index
+    end
+  end
 
   private
 

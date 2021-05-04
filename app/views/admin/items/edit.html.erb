@@ -1,7 +1,7 @@
 <div class ="container">
-  <h2>商品編集</h2>
+  <h2>商品編集・削除</h2>
   <div class="row">
-    <div class="my-5">
+    
     <%= form_with model:@item, url: admin_item_path(@item.id),local:true do |f| %>
       <table class="table table-borderless">
       <tr class="d-flex">
@@ -146,9 +146,8 @@
       <!--ここまで-->
     </table>
     <div>
-      <%= f.submit "変更内容保存", class: "btn btn-success" %>
+      <%= f.submit "変更内容保存", class: "btn btn-outline-success" %> | <%= link_to "削除する", admin_item_path(@item), method: :delete, data: {confirm: "削除しますか？(販売停止にもできます。)"}, class: "btn btn-outline-danger" %>
     </div>
     <% end %>
-    </div>
   </div>
 </div>
