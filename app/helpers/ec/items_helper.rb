@@ -1,0 +1,2 @@
+module Ec::ItemsHelper
+end
