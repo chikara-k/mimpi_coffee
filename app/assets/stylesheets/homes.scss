@@ -4,9 +4,46 @@
 
 .main-visual {
   width: 100%;
-  height: 700px;
+  height: 675px;
   background-image: url(img/coffee.png);
   background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
   background-position: center; /* 背景画像を中央に配置 */
-  opacity: 0.2;
+  // opacity: 0.2;
+}
+
+
+.main-visual-text {
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+  color: white;
+  font-family :
+  YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 30px;
+}
+
+
+.about-visual-top {
+  width: 100%;
+  height: 675px;
+  background-image: url(img/about_top.png);
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center; /* 背景画像を中央に配置 */
+  // opacity: 0.2;
+}
+
+.about-visual-text {
+  display: table-cell;
+	vertical-align: middle;
+  text-align: left;
+  color: white;
+  font-family :
+  YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 30px;
 }

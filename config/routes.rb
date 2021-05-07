@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
 
   root to: 'homes#top'
+  get '/about' => 'homes#about'
   namespace :ec do
     resources :items, only: [:index, :show]
   end

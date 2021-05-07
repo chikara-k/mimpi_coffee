@@ -1,26 +1,33 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="form-row">
+    <div class="form-group col-lg-4" style="padding-left: 20px;">
+      <h3 class="mt-3">ログイン</h3>
+      <p style="padding: 8px;">会員の方はこちらからログイン</p>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
+        <div class="field mt-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "登録メールアドレス（半角英数字）" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+        <div class="field mt-4">
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "パスワード（半角英数字）" %>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="actions mt-5">
+           <%= f.submit "ログイン", class: "btn btn btn-outline-success btn-block" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="col-lg-6" style="padding-left: 250px;">
+      <h3 class="mt-3">新規会員登録</h3>
+      <h6 style="padding-top: 20px;">1. ご注文者住所の登録ができます</h6>
+      <h6 style="padding-top: 20px;">2. お届け先住所の登録ができます</h6>
+      <h6 style="padding-top: 20px;">3. 購入履歴を確認できます</h6>
+      <h6 style="padding-top: 20px;">4. 購入履歴より好みの分析ができます</h6>
+      <div class="actions mt-4">
+         <%= link_to "新規会員登録はこちら", new_customer_registration_path, class: "btn btn-outline-secondary btn-block" %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= render "customers/shared/links" %>
+</div>
