@@ -1,0 +1,49 @@
+<div class="container">
+  <h3 style="padding-top: 20px;">お問い合わせ確認</h3>
+   <p style="padding-top: 20px;"></p>
+  <div class="form-row">
+    <p>お名前：</p>
+    <div class="col-lg-6">
+      <%= @contact.name %>
+    </div>
+  </div>
+  <div class="form-row">
+    <p>メールアドレス：</p>
+    <div class="col-lg-6">
+      <%= @contact.email %>
+    </div>
+  </div>
+  <div class="form-row">
+    <p>お問い合わせ内容：</p>
+    <div class="col-lg-6">
+      <%= @contact.message %>
+    </div>
+  </div>
+  <p style="padding-top: 20px;"></p>
+  <div class="row">
+    <div class="col-lg-4">
+      <%= form_with model:@contact,  local:true do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :message %>
+        <%= f.submit '送信', class: "btn btn-outline-success btn-block" %>
+      <% end %>
+    </div>
+  </div>
+  <p style="padding-top: 10px;"></p>
+  <div class="row">
+    <div class="col-lg-4">
+      <%= form_with model:@contact, url: back_path(@contact), local:true do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :message %>
+        <%= f.submit '入力画面に戻る', class: "btn btn-outline-secondary btn-block" %>
+      <% end %>
+    </div>
+  </div>
+  <p style="padding-top: 30px;"></p>
+</div>
+
+
+
+

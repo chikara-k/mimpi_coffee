@@ -34,8 +34,15 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get '/about' => 'homes#about'
+  # お問い合わせ
+  resources :contacts, only: [:new, :create]
+  post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+  post 'contacts/back', to: 'contacts#back', as: 'back'
+  get 'done', to: 'contacts#done', as: 'done'
+  
   namespace :ec do
     resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index]
   end
   
 end
