@@ -39,10 +39,20 @@ Rails.application.routes.draw do
   post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
   post 'contacts/back', to: 'contacts#back', as: 'back'
   get 'done', to: 'contacts#done', as: 'done'
-  
+
   namespace :ec do
     resources :items, only: [:index, :show]
-    resources :cart_items, only: [:index]
+    resources :cart_items, only: [:index, :create, :update, :destroy] do
+      collection do
+        delete 'empty'
+      end
+    end
+    resources :orders, only: [:index, :new, :show, :create, :update] do
+      collection do
+        get "confirm"
+        get "complete"
+      end
+    end
   end
-  
+
 end

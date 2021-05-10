@@ -1,2 +1,67 @@
-<h1>Ec::CartItems#index</h1>
-<p>Find me in app/views/ec/cart_items/index.html.erb</p>
+<div class="container">
+  <h2 style="padding: 20px 0;">お買い物かご</h2>
+  <div class="row">
+    <div class="col-lg-12">
+      <!--< link_to "カートを空にする", ec_empty_cart_items_path, method: :delete, class: "btn btn-sm btn-danger mt-2" %>-->
+      <table class="table table-bordered">
+        <thead>
+          <th scope="col" class="text-center">削除</th>
+          <th scope="col" class="text-center">商品内容</th>
+          <th scope="col" class="text-center">単価（税込）</th>
+          <th scope="col" class="text-center">数量</th>
+          <th scope="col" class="text-center">小計</th>
+        </thead>
+        <% @cart_items.each do |cart_item| %>
+        <tbody>
+          <tr>
+            <td class="text-center" style="padding-top: 75px;">
+              <%= link_to "✖️", ec_cart_item_path(cart_item), method: :delete %>
+            </td>
+            <td>
+              <div class="row justify-content-md-left" size="200x200">
+                <div class="col-lg-4">
+                  <%= attachment_image_tag(cart_item.item, :image, size: "150x150") %>
+                </div>
+                <div class="col-lg-8" style="padding-top: 45px;">
+                  <%= cart_item.item.name %>
+                  <p>豆量：100g</p>
+                </div>
+              </div>
+            </td>
+            <td class="text-center" style="padding-top: 75px;">
+              <h6><%= (cart_item.item.price * @tax).to_i.to_s(:delimited, delimiter: ',') %>円</h6>
+            </td>
+            <td class="text-center" style="padding-top: 75px;">
+              <%= form_with model: cart_item, url: ec_cart_item_path(cart_item.id), local: true, method: :patch do |f| %>
+                <%= f.select :amount, options_for_select((1..10).to_a, {selected: cart_item.amount.to_i}) %>
+                <%= f.submit "変更"%>
+              <% end %>
+            </td>
+            <td class="text-center" style="padding-top: 75px;">
+              <% @subtotal = cart_item.item.price * @tax * cart_item.amount %>
+              <%= @subtotal.to_i.to_s(:delimited, delimiter: ',') %>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-9">
+        <%= link_to "買い物を続ける", ec_items_path, class: "btn btn-info" %>
+      </div>
+    <div class="col-3">
+      <table class="table table-hover table-bordered">
+        <tbody>
+          <tr>
+            <td class="table-secondary font-weight-bold">合計金額</td>
+            <td><%= (@item_total * @tax).to_i.to_s(:delimited, delimiter: ',')%></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><%= link_to "情報入力に進む", new_ec_order_path, class: "btn btn-success btn-block"%></p>
+    </div>
+  </div>
+</div>
