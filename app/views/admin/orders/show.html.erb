@@ -1,2 +1,86 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<div class="container">
+  <h2 style="padding: 20px 0;">注文履歴詳細</h2>
+  <div class="row">
+    <div class="col-lg-8">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>購入者</td>
+            <td>
+              <%= link_to admin_customer_path(@order.customer), :style=>"color:black;" do %>
+                <%= @order.customer.last_name %>
+                <%= @order.customer.first_name %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>注文日</td>
+            <td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
+          </tr>
+          <tr>
+            <td>配送先</td>
+            <td><%= @order.address %></td>
+          </tr>
+          <tr>
+            <td>支払い方法</td>
+            <td><%= @order.payment_method %></td>
+          </tr>
+          <tr>
+            <td>注文ステータス</td>
+            <td>
+              <%= form_with model: @order, url:admin_order_path(@order), local:true do |f| %>
+                <%= f.select :order_status, [['入金待ち'], ['入金確認'], ['製作中'], ['発送準備中'], ['発送済み']], prompt: "入金待ち" %>
+                <%= f.submit "更新", class: "btn btn-sm btn-success" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8">
+      <table class="table table-bordered">
+        <thead class="table-active">
+          <tr>
+            <th class="text-center">商品名</th>
+            <th class="text-center">単価（税込）</th>
+            <th class="text-center">数量</th>
+            <th class="text-center">小計</th>
+          </tr>
+        </thead>
+        <% @order.order_details.each do |order_detail| %>
+          <% tax = 1.1 %>
+          <% subtotal = (order_detail.item.price * tax * order_detail.amount).to_i.to_s(:delimited, delimiter: ',') %>
+        <tbody>
+          <td><%= order_detail.item.name%></td>
+          <td><%= (order_detail.item.price * tax).to_i.to_s(:delimited, delimiter: ',') %></td>
+          <td><%= order_detail.amount%></td>
+          <td><%= subtotal %></td>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <table class="table table-borderless">
+        <tbody>
+          <tr class="border-top">
+            <td>商品合計</td>
+            <td class="text-right"><%= @item_total.to_s(:delimited) %>円</td>
+          </tr>
+          <tr>
+            <td>送料</td>
+            <td class="text-right"><%= @order.shipping_cost %>円</td>
+          </tr>
+          <tr class="border-top">
+            <td>請求金額合計</td>
+            <td class="text-right"><b><%= @order.total_payment %>円</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

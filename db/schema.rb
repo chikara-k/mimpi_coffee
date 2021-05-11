@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_05_07_141139) do
     t.integer "item_id"
     t.integer "subtotal", null: false
     t.integer "amount", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

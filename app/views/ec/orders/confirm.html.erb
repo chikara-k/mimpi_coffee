@@ -1,6 +1,96 @@
 <div class="container">
   <h3 style="padding: 20px 0;">ご注文内容の確認</h3>
   <div class="row">
-    
+    <div class="col-lg-12">
+      <table class="table table-bordered">
+        <thead>
+          <th scope="col" class="text-center table-secondary">商品内容</th>
+          <th scope="col" class="text-center table-secondary">単価（税込）</th>
+          <th scope="col" class="text-center table-secondary">数量</th>
+          <th scope="col" class="text-center table-secondary">小計</th>
+        </thead>
+        <% @cart_items.each do |cart_item| %>
+        <tbody>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-lg-3" style="padding-left: 50px;">
+                  <%= attachment_image_tag(cart_item.item, :image, size: "80x80") %>
+                </div>
+                <div class="col-lg-9">
+                  <%= cart_item.item.name %>
+                  <p>豆量：100g</p>
+                </div>
+              </div>
+            </td>
+            <td class="text-center" style="padding-top: 45px;">
+              <%= (cart_item.item.price * 1.1).to_i %>円
+            </td>
+            <td class="text-center" style="padding-top: 45px;">
+              <%= cart_item.amount %>
+            </td>
+            <td class="text-center" style="padding-top: 45px;">
+              <% @subtotal = (cart_item.item.price * 1.1 * cart_item.amount).to_i %>
+              <%= @subtotal %>円
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+        <tbody>
+          <td colspan="4" class="text-right">
+            小計　<%= @item_total %>円
+          </td>
+        </tbody>
+        <tbody>
+          <td colspan="4" class="text-right">
+            送料　800円
+          </td>
+        </tbody>
+        <tbody class="table table-borderless">
+          <td colspan="1">
+            <p><b>お届け先</b></p>
+            <p style="margin-left: 20px;"><%= @order.name %></p>
+            <p style="margin-left: 20px;">〒<%= @order.postal_code %></p>
+            <p style="margin-left: 20px;"><%= @order.address %></p>
+          </td>
+          <td colspan="3">
+            <P><b>お支払い方法</b></P>
+            <P style="margin-left: 20px;"><%= @order.payment_method %></P>
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8"></div>
+    <div class="col-lg-4">
+      <table class="table table-borderless">
+        <tbody>
+          <tr class="border-top">
+            <td>商品合計</td><td class="text-right"><%= @item_total %>円</td>
+          </tr>
+          <tr>
+            <td>送料</td><td class="text-right">800円</td>
+          </tr>
+
+          <tr class="border-top">
+            <td><b>お支払い金額合計</b></td><td class="text-right"><b><%= @item_total + 800 %>円</b></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <%= form_with model: @order, url: ec_orders_path do |f| %>
+                <%= f.hidden_field :name %>
+                <%= f.hidden_field :address %>
+                <%= f.hidden_field :postal_code %>
+                <%= f.hidden_field :payment_method %>
+                <%=f.submit "注文を確定する", class:"btn btn-success btn-block" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+<p style="margin: 20px;"></p>

@@ -5,6 +5,7 @@ class CreateOrderDetails < ActiveRecord::Migration[5.2]
       t.integer :item_id
       t.integer :subtotal, null: false
       t.integer :amount, null: false
+      t.integer :price, null: false
 
       t.timestamps
     end

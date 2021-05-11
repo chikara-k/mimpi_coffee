@@ -26,16 +26,16 @@
               <% if customer_signed_in? %>
                 <p style="padding-top: 4px; padding-right: 4px;">ようこそ、<%= current_customer.first_name %>さん</p>
                 <li class="nav-item">
-                  <%= link_to "About", about_path, class: "nav-link text-dark font-weight-bold fas fa-smile" %>
+                  <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark font-weight-bold fas fa-heart" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "マイページ", root_path(current_customer.id), class: "nav-link text-dark font-weight-bold fas fa-smile" %>
+                  <%= link_to "マイページ", ec_mypage_path(current_customer.id), class: "nav-link text-dark font-weight-bold fas fa-smile" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "商品一覧", ec_items_path, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "カート", root_path, class: "nav-link text-dark font-weight-bold fas fa-smile" %>
+                  <%= link_to "カート", ec_cart_items_path, class: "nav-link text-dark font-weight-bold fas fa-shopping-cart" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>
@@ -62,7 +62,7 @@
                 </form>
               <% else %>
                 <li class="nav-item">
-                  <%= link_to "About", about_path, class: "nav-link text-dark font-weight-bold fas fa-smile" %>
+                  <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark font-weight-bold fas fa-heart" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>

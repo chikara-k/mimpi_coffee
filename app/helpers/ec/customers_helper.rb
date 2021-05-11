@@ -1,0 +1,2 @@
+module Ec::CustomersHelper
+end

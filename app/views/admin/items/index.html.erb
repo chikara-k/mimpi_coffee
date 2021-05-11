@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>商品一覧</h2>
+  <h2 style="padding-top: 20px;">商品一覧</h2>
   <div class="row">
     <div class="col-12">
         <%= link_to new_admin_item_path, class: "btn btn-outline-success float-right" do %>
@@ -19,13 +19,13 @@
       </div>
       <!--ここのcol-6は検討箇所（デザイン）-->
       <div class="col-6">
-        <%= link_to admin_item_path(item), :style => "color:black;" do%> 
+        <%= link_to admin_item_path(item), :style => "color:black;" do%>
         <h5><%= item.name %></h5>
         <% end %>
-        
-        <% if item.roasting_level == 1 %>
+
+        <% if item.roasting_level == "中煎り" %>
         <h6>中煎り</h6>
-        <% elsif item.roasting_level == 2 %>
+        <% elsif item.roasting_level == "浅煎り" %>
         <h6>浅煎り</h6>
         <% else %>
         <h6>深煎り</h6>
@@ -45,7 +45,7 @@
           <% else %>
           <li>苦味：ー</li>
           <% end %>
-          
+
           <% if item.taste_sour == 1 %>
           <li>酸味：●</li>
           <% elsif item.taste_sour == 2 %>
@@ -59,7 +59,7 @@
           <% else %>
           <li>酸味：ー</li>
           <% end %>
-          
+
           <% if item.taste_aroma == 1 %>
           <li>香り：●</li>
           <% elsif item.taste_aroma == 2 %>
@@ -73,7 +73,7 @@
           <% else %>
           <li>香り：ー</li>
           <% end %>
-          
+
           <% if item.taste_body == 1 %>
           <li>コク：●</li>
           <% elsif item.taste_body == 2 %>
@@ -100,7 +100,7 @@
             <% end %>
         </ul>
       </div>
-      
+
     </div>
     <% end %>
   </div>

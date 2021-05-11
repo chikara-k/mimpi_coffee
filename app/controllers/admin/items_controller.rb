@@ -11,7 +11,6 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.genre_id = -1 #? genreテーブルの値がないので入れないとエラーになる。(対応方法はgenreを作ってからという形にするかschemaのdefault値を設定する。)
     if @item.save
       flash[:success] = "新商品を登録しました"
       redirect_to admin_item_path(@item)
@@ -26,7 +25,6 @@ class Admin::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-     @item.genre_id = -1 #? genreテーブルの値がないので入れないとエラーになる。(対応方法はgenreを作ってからという形にするかschemaのdefault値を設定する。)
   end
 
   def update

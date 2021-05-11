@@ -1,7 +1,7 @@
 <div class = "container">
-<h2><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h2>
+  <h2 style="padding: 20px 0;"><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h2>
   <div class = "row">
-    <div class="my-5">
+    <div class="col-lg-12">
       <%= form_with model:@customer, url:admin_customer_path(@customer),local:true do |f| %>
         <table class="table table-borderless">
           <tr class="d-flex">

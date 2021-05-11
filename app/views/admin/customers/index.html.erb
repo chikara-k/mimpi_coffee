@@ -1,37 +1,41 @@
 <div class="container">
-  <h2>会員一覧</h2>
+  <h2 style="padding-top: 20px;">会員一覧</h2>
   <p style="height:2px;"></p>
   <div class="row">
-    <div class="col-12">
-      <table class="table">
+    <div class="col-lg-12">
+      <table class="table table-bordered">
         <thead class="table-active">
           <tr>
-            <th>会員ID</th>
-            <th>氏名</th>
-            <th>メールアドレス</th>
-            <th>ステータス</th>
+            <th class="text-center">会員ID</th>
+            <th class="text-center">氏名</th>
+            <th class="text-center">メールアドレス</th>
+            <th class="text-center">ステータス</th>
+            <th class="text-center">詳細</th>
           </tr>
         </thead>
         <tbody>
           <% @customers.each do |customer| %>
             <tr>
-              <td>
+              <td class="text-center">
                 <%= customer.id %>
               </td>
-              <td>
+              <td class="text-center">
                 <%= link_to admin_customer_path(customer), :style=>"color:black;" do %>
                   <%= customer.last_name %><%= customer.first_name %>
                 <% end %>
               </td>
-              <td>
+              <td class="text-center">
                 <%= customer.email %>
               </td>
-              <td>
+              <td class="text-center">
                 <% if customer.is_active == true %>
                   <p class = "text-success">有効</p>
                 <% elsif customer.is_active == false %>
                   <p class = "text-secondary">退会</p>
                 <% end %>
+              </td>
+              <td class="text-center">
+                <%= link_to '詳細', admin_customer_path(customer), class: "btn btn btn-outline-info" %>
               </td>
             </tr>
           <% end %>

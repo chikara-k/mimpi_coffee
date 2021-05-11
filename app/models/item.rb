@@ -15,6 +15,6 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :is_sales, inclusion:{in: [true, false]}
 
-  enum roasting_level: { "深煎り": "0", "中煎り": "1", "浅煎り": "2" }
+  enum roasting_level: { "深煎り": 0, "中煎り": 1, "浅煎り": 2 }
 
 end

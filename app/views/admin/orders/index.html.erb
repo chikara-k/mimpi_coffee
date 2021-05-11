@@ -1,41 +1,40 @@
-
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h2>注文履歴一覧</h2>
-      <table class="table table-hover table-bordered">
+    <div class="col-lg-12">
+      <h2 style="padding: 20px 0;">注文履歴一覧</h2>
+      <table class="table table-bordered">
         <thead class="table-active">
           <tr class="info">
-            <th>注文日</th>
-            <th>配送先</th>
-            <th>購入者</th>
-            <th>注文商品</th>
-            <th>支払金額</th>
-            <th>注文ステータス</th>
-            <th>注文詳細</th>
+            <th class="text-center">注文日</th>
+            <th class="text-center">配送先</th>
+            <th class="text-center">購入者</th>
+            <th class="text-center">注文商品</th>
+            <th class="text-center">支払金額</th>
+            <th class="text-center">注文ステータス</th>
+            <th class="text-center">注文詳細</th>
           </tr>
         </thead>
         <tbody>
           <% @orders.each do |order| %>
             <tr>
-              <td>
+              <td class="text-center">
                 <%= link_to admin_order_path(order), :style=>"color:black;" do %>
                   <%= order.created_at.strftime("%Y/%m/%d")  %>
                 <% end %>
               </td>
               <td>
-                <%= order.postal_code %><br>
+                〒<%= order.postal_code %><br>
                 <%= order.address %>
               </td>
-              <td><%= order.customer.last_name %> <%= order.customer.first_name %></td>
+              <td class="text-center"><%= order.customer.last_name %> <%= order.customer.first_name %></td>
               <td>
-                <% order.ordered_items.each do |ord| %>
+                <% order.order_details.each do |ord| %>
                 <%= Item.where(id: ord.item_id).pluck(:name).join %><br>
                 <% end %>
               </td>
-              <td><%= order.total_payment %></td>
-              <td><%= order.order_status%></td>
-              <td><%= link_to '詳細', admins_order_path(order.id), class: "btn btn btn-outline-info" %></td>
+              <td class="text-center"><%= order.total_payment %>円</td>
+              <td class="text-center"><%= order.order_status %></td>
+              <td class="text-center"><%= link_to '詳細', admin_order_path(order), class: "btn btn btn-outline-info" %></td>
             </tr>
           <% end %>
         </tbody>

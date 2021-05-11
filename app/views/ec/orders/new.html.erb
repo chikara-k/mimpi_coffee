@@ -1,6 +1,6 @@
 <div class="container">
   <h3 style="padding: 20px 0;">お届け先とお支払い方法</h3>
-  <%= form_with model: @orders, url: confirm_ec_orders_path, method: :get, local: true do |f| %>
+  <%= form_with model: @orders, url: ec_orders_confirm_path, method: :get, local: true do |f| %>
   <div class="row">
     <div class="col-lg-5">
 			<h5>＜お届け先＞</h5>
@@ -23,7 +23,7 @@
 			<div style="margin-left:20px;">
 				<label for="name">宛名</label>
         <div class="form-group">
-          <%= f.text_field :name, autocomplete: "postal_code", class: 'form-control', placeholder: "例：山田太郎" %>
+          <%= f.text_field :name, autocomplete: "name", class: 'form-control', placeholder: "例：山田太郎" %>
         </div>
 				<label for="postal_code">郵便番号(ハイフンなし)</label>
         <div class="form-group">
@@ -39,12 +39,12 @@
     <div class="col-lg-5">
       <h5>＜お支払い方法＞</h5>
 			<br>
-			<%= f.radio_button :payment_method, 0, checked: "checked" %>
+			<%= f.radio_button :payment_method, "クレジットカード", checked: "checked" %>
 			<%= f.label :payment_method, "クレジットカード" %>
 			<br>
 			<br>
-			<%= f.radio_button :payment_method, 1 %>
-			<%= f.label :payment_method, "銀行振込" %>
+			<%= f.radio_button :payment_method, "銀行振り込み" %>
+			<%= f.label :payment_method, "銀行振り込み" %>
 			<p style="padding-top: 20px;"></p>
 			<%= f.submit "確認画面へ進む", class:"btn btn-success" %>
     </div>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :ec do
+    get 'mypages/show'
+  end
 # 管理者側
   devise_for :admins, controllers: {
   	sessions: 'admins/sessions'
@@ -40,17 +43,28 @@ Rails.application.routes.draw do
   post 'contacts/back', to: 'contacts#back', as: 'back'
   get 'done', to: 'contacts#done', as: 'done'
 
+  namespace :customers do
+
+  end
+
   namespace :ec do
     resources :items, only: [:index, :show]
-    resources :cart_items, only: [:index, :create, :update, :destroy] do
-      collection do
-        delete 'empty'
-      end
-    end
-    resources :orders, only: [:index, :new, :show, :create, :update] do
-      collection do
-        get "confirm"
-        get "complete"
+    resources :cart_items, only: [:index, :create, :update, :destroy] #do
+      # collection do
+      #   delete 'empty'
+      # end
+    #end
+
+    get 'orders/confirm' => 'orders#confirm'
+    get 'orders/complete' => 'orders#complete'
+    resources :orders, only: [:index, :new, :show, :create, :update]
+
+    resources :mypages, only: [:show]
+
+    resources :customers, only: [:show, :edit, :update] do
+      member do
+        get "confirm"  #会員情報の取得
+        patch "hide"  #会員情報の更新
       end
     end
   end
