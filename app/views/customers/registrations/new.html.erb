@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <h3>新規会員登録</h3>
-      <p style="height:2px;"></p>
+      <h3 style="padding: 20px 0;">新規会員登録</h3>
         <%= render "devise/shared/error_messages", resource: resource %>
         <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
         <label for="name">お名前(必須)</label>

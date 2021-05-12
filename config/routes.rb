@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :ec do
-    get 'mypages/show'
-  end
 # 管理者側
   devise_for :admins, controllers: {
   	sessions: 'admins/sessions'
@@ -64,9 +61,10 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :update] do
       member do
         get "confirm"  #会員情報の取得
-        patch "hide"  #会員情報の更新
+        patch "hide"  #退会処理
       end
     end
-  end
 
+    resources :addresses, only: [:index, :create, :edit, :update, :destroy]
+  end
 end

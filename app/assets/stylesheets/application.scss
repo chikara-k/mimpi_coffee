@@ -16,3 +16,22 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 64px;
+}
+
+footer {
+  bottom: 0;
+  height: 64px;
+  position: absolute;
+  width: 100%;
+
+  border-top: 1px solid lightgrey;
+  text-align: center;
+}

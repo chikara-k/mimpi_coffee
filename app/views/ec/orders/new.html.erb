@@ -13,7 +13,7 @@
 			<br>
 			<%= f.radio_button :address_option, 1 %>
 			<%= f.label :order_address, "登録済住所から選択" %>
-			<%= f.collection_select :address_id, current_customer.addresses, :id, :resistration, :include_blank => "選択してください" %>
+			<%= f.collection_select :address_id, current_customer.addresses, :id, :address, :include_blank => "選択してください" %>
 
 			<br>
 			<br>

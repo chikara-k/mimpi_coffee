@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row m-5">
+    <div class="col-lg-12 text-center">
+      <h4 class="mb-5">本当に退会しますか？</h4>
+      <p class="mb-5">
+        退会手続きが完了した時点で、現在保存されている購入履歴やお届け先等の情報は、<br>
+        <b>すべて削除されます</b>のでご注意ください。</br>
+      </p>
+      <div class="col-lg-12">
+        <%= link_to "退会しない", ec_mypage_path(@customer.id), class:"btn btn-info mr-5" %>
+        <%= link_to "退会する", hide_ec_customer_path(@customer.id), method: :patch, class:" btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

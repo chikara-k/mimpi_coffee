@@ -1,0 +1,51 @@
+<div class="container">
+  <h3 style="padding: 20px 0;">ご注文履歴一覧</h3>
+  <% @orders.each do |order| %>
+  <div class="row table table-bordered">
+    <div class="col-lg-12 pt-2" style="background-color: #f1f1f1;">
+      <div class="row border-bottom">
+        <div class="col-lg-3">
+          <p><b>注文日</b></p>
+          <p style="margin-left:20px;"><%= order.created_at.strftime("%Y/%m/%d") %></p>
+        </div>
+        <div class="col-lg-3">
+          <p><b>合計</b></p>
+          <p style="margin-left:20px;"><%= order.total_payment %>円</p>
+        </div>
+        <div class="col-lg-6">
+          <b>お届け先</b><br>
+          <div style="margin-left:20px;">
+            <%= order.name %><br>
+            〒<%= order.postal_code %>  <%= order.address%>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-lg-3">
+          <p><b>商品名</b></p>
+          <p>
+            <% order.order_details.each do |ord| %>
+              <li><%= Item.where(id: ord.item_id).pluck(:name).join %></li>
+            <% end %>
+          </p>
+          <p>ー 豆量：100g ー</p>
+        </div>
+        <div class="col-lg-3">
+          <p><b>数量</b></p>
+          <% order.order_details.each do |ord| %>
+            <li style="list-style: none;">ー　<%= ord.amount%> 個</li>
+          <% end %>
+        </div>
+        <div class="col-lg-3">
+          <p><b>ステータス</b></p>
+          <p style="margin-left:20px;"><%= order.order_status %></p>
+        </div>
+        <div class="col-lg-3">
+          <%= link_to '詳細', ec_order_path(order), class: "btn btn btn-outline-info", style: "margin: 30px;" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,2 +1,53 @@
-<h1>Ec::Mypages#show</h1>
-<p>Find me in app/views/ec/mypages/show.html.erb</p>
+<div class="container">
+  <h4 style="padding: 20px 0;">マイページ</h4>
+  <h4>ようこそ <b><%= @customer.last_name %> <%= @customer.first_name %></b> 様</h4>
+  <br>
+  <p>このページはお客様のマイページです。</p>
+  <div class="row">
+    <%= link_to ec_orders_path, class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
+      <div class="row">
+        <div class="col-lg-12">
+          <h5 class="fas fa-shopping-cart text-dark"> 購入履歴　→</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 mt-3">
+          <ul>
+            <li class="text-dark">ご注文した商品の内容確認</li>
+            <li class="text-dark">再注文</li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to ec_addresses_path, class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
+      <div class="row">
+        <div class="col-lg-12">
+          <h5 class="fas fa-truck text-dark"> 配送先リスト　→</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 mt-3">
+          <ul>
+            <li class="text-dark">新規配送先の追加</li>
+            <li class="text-dark">登録済み配送先の変更</li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to ec_customer_path(current_customer), class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
+      <div class="row">
+        <div class="col-lg-12">
+          <h5 class="fas fa-user text-dark"> 会員情報　→</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 mt-3">
+          <ul>
+            <li class="text-dark">会員情報の確認、変更</li>
+            <li class="text-dark">退会</li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
