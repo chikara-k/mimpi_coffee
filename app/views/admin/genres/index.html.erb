@@ -24,8 +24,8 @@
               <%= genre.name %>
             </td>
             <td>
-              <%= link_to "編集する", edit_admin_genre_path(genre), class: "btn btn-outline-info" %> |
-              <%= link_to "削除する", admin_genre_path(genre), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
+              <%= link_to "編集する", edit_admin_genre_path(genre), class: "btn btn-outline-info mr-2" %> |
+              <%= link_to "削除する", admin_genre_path(genre), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger ml-2" %>
             </td>
           </tr>
         <% end %>

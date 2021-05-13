@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
       when Admin
         admin_root_path
       when Customer
-        #? とりあえずroot_path 変更=> customer_path(current_customer.id)
-        root_path
+        ec_mypage_path(current_customer.id)
     end
   end
 

@@ -1,5 +1,5 @@
 class Admin::OrdersController < ApplicationController
-   #？ before_action :authenticate_admin!  全部完了したらコメント外す
+  before_action :authenticate_admin!
 
   def index
     @orders = Order.all.order(created_at: :desc)

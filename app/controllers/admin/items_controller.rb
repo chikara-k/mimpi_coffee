@@ -1,8 +1,12 @@
 class Admin::ItemsController < ApplicationController
-   #？ before_action :authenticate_admin!  全部完了したらコメント外す
-  
+  before_action :authenticate_admin!
+
   def index
-    @items = Item.all
+    @blended_coffee = Item.where(genre_id: 1)
+    @asian_coffee = Item.where(genre_id: 2)
+    @african_coffee = Item.where(genre_id: 3)
+    @latian_america_coffee = Item.where(genre_id: 4)
+    @others = Item.where(genre_id: 5)
   end
 
   def new
@@ -36,7 +40,7 @@ class Admin::ItemsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy

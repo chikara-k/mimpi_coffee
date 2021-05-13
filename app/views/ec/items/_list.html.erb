@@ -1,0 +1,101 @@
+<div class="row">
+    <% item.each do |item|  %>
+      <div class="col-lg-6">
+      <div class="row">
+        <div class="col-lg-4">
+          <%= link_to ec_item_path(item) do%>
+            <%= attachment_image_tag item, :image, :size => '170x220' %>
+          <% end %>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= link_to ec_item_path(item), :style => "color:black;" do%>
+              <h5 class="font-weight-bold"><%= item.name %></h5>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <% if item.roasting_level == "中煎り" %>
+              <p>中煎り</p>
+              <% elsif item.roasting_level == "浅煎り" %>
+              <p>浅煎り</p>
+              <% else %>
+              <p>深煎り</p>
+              <% end %>
+
+              <ul style="list-style: none; padding-left: 5px;">
+                <% if item.taste_bitter == 1 %>
+                <li>苦味：●</li>
+                <% elsif item.taste_bitter == 2 %>
+                <li>苦味：● ●</li>
+                <% elsif item.taste_bitter == 3 %>
+                <li>苦味：● ● ●</li>
+                <% elsif item.taste_bitter == 4 %>
+                <li>苦味：● ● ● ● </li>
+                <% elsif item.taste_bitter == 5 %>
+                <li>苦味：● ● ● ● ●</li>
+                <% else %>
+                <li>苦味：ー</li>
+                <% end %>
+
+                <% if item.taste_sour == 1 %>
+                <li>酸味：●</li>
+                <% elsif item.taste_sour == 2 %>
+                <li>酸味：● ●</li>
+                <% elsif item.taste_sour == 3 %>
+                <li>酸味：● ● ●</li>
+                <% elsif item.taste_sour == 4 %>
+                <li>酸味：● ● ● ● </li>
+                <% elsif item.taste_sour == 5 %>
+                <li>酸味：● ● ● ● ●</li>
+                <% else %>
+                <li>酸味：ー</li>
+                <% end %>
+
+                <% if item.taste_aroma == 1 %>
+                <li>香り：●</li>
+                <% elsif item.taste_aroma == 2 %>
+                <li>香り：● ●</li>
+                <% elsif item.taste_aroma == 3 %>
+                <li>香り：● ● ●</li>
+                <% elsif item.taste_aroma == 4 %>
+                <li>香り：● ● ● ● </li>
+                <% elsif item.taste_aroma == 5 %>
+                <li>香り：● ● ● ● ●</li>
+                <% else %>
+                <li>香り：ー</li>
+                <% end %>
+
+                <% if item.taste_body == 1 %>
+                <li>コク：●</li>
+                <% elsif item.taste_body == 2 %>
+                <li>コク：● ●</li>
+                <% elsif item.taste_body == 3 %>
+                <li>コク：● ● ●</li>
+                <% elsif item.taste_body == 4 %>
+                <li>コク：● ● ● ● </li>
+                <% elsif item.taste_body == 5 %>
+                <li>コク：● ● ● ● ●</li>
+                <% else %>
+                <li>コク：ー</li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <p style="height:5rem;"></p>
+              <p>¥ <%= item.price.to_s(:delimited) %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-10">
+              <%= item.introduction %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="padding-bottom: 5px;"></p>
+    </div>
+    <% end %>
+  </div>

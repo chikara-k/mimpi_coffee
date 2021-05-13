@@ -1,8 +1,12 @@
 class Ec::CustomersController < ApplicationController
-  #? before_action :authenticate_customer!
+  before_action :authenticate_customer!
 
   def show
-    @customer = Customer.find(params[:id])
+    if current_customer.id.to_s == params[:id]
+      @customer = Customer.find(params[:id])
+    else
+      redirect_to customers_sign_in_path
+    end
   end
 
   def edit

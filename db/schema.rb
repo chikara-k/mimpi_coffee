@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2021_05_07_141139) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "genre_id"
+    t.integer "genre_id", default: 5
     t.string "name", null: false
     t.string "image_id", null: false
     t.integer "taste_bitter"

@@ -2,106 +2,64 @@
   <h2 style="padding-top: 20px;">商品一覧</h2>
   <div class="row">
     <div class="col-12">
-        <%= link_to new_admin_item_path, class: "btn btn-outline-success float-right" do %>
-          <i class="fas fa-plus"></i>
-          新規登録
-        <% end %>
+        <%= link_to " 新規登録", new_admin_item_path, class: "fas fa-plus float-right mb-3 btn btn-outline-success" %>
     </div>
   </div>
 
   <div class="row">
-    <% @items.each do |item| %>
-    <div class="col-6 px-3 d-flex flex-row bd-highlight mb-3">
-      <div class="col-3.5 bd-highlight">
-        <%= link_to admin_item_path(item) do%>
-          <%= attachment_image_tag item, :image, :size => '160x160' %>
-        <% end %>
-      </div>
-      <!--ここのcol-6は検討箇所（デザイン）-->
-      <div class="col-6">
-        <%= link_to admin_item_path(item), :style => "color:black;" do%>
-        <h5><%= item.name %></h5>
-        <% end %>
-
-        <% if item.roasting_level == "中煎り" %>
-        <h6>中煎り</h6>
-        <% elsif item.roasting_level == "浅煎り" %>
-        <h6>浅煎り</h6>
-        <% else %>
-        <h6>深煎り</h6>
-        <% end %>
-        <!--#? ここ重複しすぎている。後々改善すべきかな。-->
-        <ul style="list-style: none; padding-left: 5px;">
-          <% if item.taste_bitter == 1 %>
-          <li>苦味：●</li>
-          <% elsif item.taste_bitter == 2 %>
-          <li>苦味：● ●</li>
-          <% elsif item.taste_bitter == 3 %>
-          <li>苦味：● ● ●</li>
-          <% elsif item.taste_bitter == 4 %>
-          <li>苦味：● ● ● ● </li>
-          <% elsif item.taste_bitter == 5 %>
-          <li>苦味：● ● ● ● ●</li>
-          <% else %>
-          <li>苦味：ー</li>
-          <% end %>
-
-          <% if item.taste_sour == 1 %>
-          <li>酸味：●</li>
-          <% elsif item.taste_sour == 2 %>
-          <li>酸味：● ●</li>
-          <% elsif item.taste_sour == 3 %>
-          <li>酸味：● ● ●</li>
-          <% elsif item.taste_sour == 4 %>
-          <li>酸味：● ● ● ● </li>
-          <% elsif item.taste_sour == 5 %>
-          <li>酸味：● ● ● ● ●</li>
-          <% else %>
-          <li>酸味：ー</li>
-          <% end %>
-
-          <% if item.taste_aroma == 1 %>
-          <li>香り：●</li>
-          <% elsif item.taste_aroma == 2 %>
-          <li>香り：● ●</li>
-          <% elsif item.taste_aroma == 3 %>
-          <li>香り：● ● ●</li>
-          <% elsif item.taste_aroma == 4 %>
-          <li>香り：● ● ● ● </li>
-          <% elsif item.taste_aroma == 5 %>
-          <li>香り：● ● ● ● ●</li>
-          <% else %>
-          <li>香り：ー</li>
-          <% end %>
-
-          <% if item.taste_body == 1 %>
-          <li>コク：●</li>
-          <% elsif item.taste_body == 2 %>
-          <li>コク：● ●</li>
-          <% elsif item.taste_body == 3 %>
-          <li>コク：● ● ●</li>
-          <% elsif item.taste_body == 4 %>
-          <li>コク：● ● ● ● </li>
-          <% elsif item.taste_body == 5 %>
-          <li>コク：● ● ● ● ●</li>
-          <% else %>
-          <li>コク：ー</li>
-          <% end %>
-        </ul>
-        <!--#? ここまで-->
-      </div>
-      <div class="p-2 bd-highlight d-flex align-items-center">
-        <ul style="list-style: none; padding-left: 10px;">
-            <li>¥ <%= item.price.to_s(:delimited) %></li>
-            <% if item.is_sales == true %>
-            <li class = "text-success">販売中</li>
-            <% elsif item.is_sales == false %>
-            <li class = "text-secondary">販売停止中</li>
-            <% end %>
-        </ul>
-      </div>
-
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">Blended Coffee</h3>
+      <p>ブレンドコーヒー</p>
+      <hr>
     </div>
-    <% end %>
   </div>
+  <%= render 'admin/items/list', item: @blended_coffee %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">Asian Coffee</h3>
+      <p>アジアのコーヒー</p>
+      <hr>
+    </div>
+  </div>
+  <%= render 'admin/items/list', item: @asian_coffee %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">African Coffee</h3>
+      <p>アフリカのコーヒー</p>
+      <hr>
+    </div>
+  </div>
+  <%= render 'admin/items/list', item: @african_coffee %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">Latin America Coffee</h3>
+      <p>中南米のコーヒー</p>
+      <hr>
+    </div>
+  </div>
+  <%= render 'admin/items/list', item: @latian_america_coffee %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">Others Coffee</h3>
+      <p>その他の商品</p>
+      <hr>
+    </div>
+  </div>
+  <%= render 'admin/items/list', item: @others %>
+  
 </div>
+
+
+
+
+
+
+
+
+
+
+

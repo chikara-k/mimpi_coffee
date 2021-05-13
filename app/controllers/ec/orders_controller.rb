@@ -1,5 +1,5 @@
 class Ec::OrdersController < ApplicationController
-  #？ before_action :authenticate_customer!  全部完了したらコメント外す
+  before_action :authenticate_customer!
 
   def new
     @orders = Order.new
@@ -77,6 +77,9 @@ class Ec::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    if @order.customer_id != current_customer.id
+      redirect_to customers_sign_in_path
+    end
 
     @item_total = 0
     @order.order_details.each do |order_detail|

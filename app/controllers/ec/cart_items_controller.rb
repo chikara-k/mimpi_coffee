@@ -1,5 +1,5 @@
 class Ec::CartItemsController < ApplicationController
-  #？ before_action :authenticate_customer!  全部完了したらコメント外す
+  before_action :authenticate_customer!
 
   def index
     @cart_items = current_customer.cart_items

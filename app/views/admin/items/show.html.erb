@@ -1,20 +1,21 @@
 <div class="container">
-  <h2>商品詳細</h2>
-  <!-- < flash[:success] %> -->
+  <h2 style="margin: 20px 0;">商品詳細</h2>
   <div class="row">
     <div class="col-lg-4.5 px-3">
       <%= attachment_image_tag @item, :image, :size => '400x400' %>
     </div>
     <div class="col-lg-3">
-      <!--#? ここ重複しすぎている。後々改善すべきかな。-->
+
       <h3><%= @item.name %></h3>
 
-      <% if @item.roasting_level == 1 %>
+      <% if @item.roasting_level == "中煎り" %>
       <h4>中煎り</h4>
-      <% elsif @item.roasting_level == 2 %>
+      <% elsif @item.roasting_level == "浅煎り" %>
       <h4>浅煎り</h4>
-      <% else %>
+      <% elsif @item.roasting_level == "深煎り" %>
       <h4 style="padding-top: 5px">深煎り</h4>
+      <% else %>
+      <p></p>
       <% end %>
 
       <p style="height:2rem;"></p>
@@ -92,13 +93,13 @@
           <th class="col-4">
             <p>税込価格</p>
             <p>(税抜価格)</p>
-            
+
             <% if @item.is_sales == true %>
             <p class = "text-success">販売中</p>
             <% elsif @item.is_sales == false %>
             <p class = "text-secondary">販売停止中</p>
             <% end %>
-            
+
           </th>
           <td class="col-4">
             <p class="font-weight-bold"><%= (@item.price * 1.1).round %>円</p>
