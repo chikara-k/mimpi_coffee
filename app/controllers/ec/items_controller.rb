@@ -13,6 +13,17 @@ class Ec::ItemsController < ApplicationController
     @cart_item = CartItem.new
   end
 
+  def map
+    results = Geocoder.search(params[:map_address])
+    @latlng = results.first.coordinates
+  
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
   def item_params
     params.require(:item).permit(:genre_id, :name, :image, :taste_bitter, :taste_sour, :taste_aroma, :taste_body, :roasting_level, :introduction, :price, :is_sales)
   end

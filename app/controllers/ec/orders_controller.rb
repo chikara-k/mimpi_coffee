@@ -88,6 +88,7 @@ class Ec::OrdersController < ApplicationController
   end
 
   private
+  
   def order_params
     params.require(:order).permit(:customer_id, :address_id, :name, :address, :postal_code, :payment_method)
   end

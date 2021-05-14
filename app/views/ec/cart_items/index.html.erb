@@ -39,7 +39,7 @@
             </td>
             <td class="text-center" style="padding-top: 75px;">
               <% @subtotal = cart_item.item.price * @tax * cart_item.amount %>
-              <%= @subtotal.to_i.to_s(:delimited, delimiter: ',') %>
+              <%= @subtotal.to_i.to_s(:delimited, delimiter: ',') %>円
             </td>
           </tr>
         </tbody>
@@ -57,7 +57,7 @@
         <tbody>
           <tr>
             <td class="table-secondary font-weight-bold">合計金額</td>
-            <td><%= (@item_total * @tax).to_i.to_s(:delimited, delimiter: ',')%></td>
+            <td><%= (@item_total * @tax).to_i.to_s(:delimited, delimiter: ',')%>円</td>
           </tr>
         </tbody>
       </table>

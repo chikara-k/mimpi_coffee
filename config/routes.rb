@@ -45,7 +45,12 @@ Rails.application.routes.draw do
   end
 
   namespace :ec do
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :show] do
+      resource :favorites, only: [:create, :destroy]
+      get 'map_request', to: 'items#map', as: 'map_request'
+    end
+
+
     resources :cart_items, only: [:index, :create, :update, :destroy] #do
       # collection do
       #   delete 'empty'

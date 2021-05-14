@@ -1,0 +1,17 @@
+<% if customer_signed_in? %>
+  <% if @item.favorited_by?(current_customer) %>
+    <p>
+      <%= link_to ec_item_favorites_path(@item), method: :delete, remote: true do %>
+        ♥<%= @item.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to ec_item_favorites_path(@item), method: :post, remote: true do %>
+        ♡<%= @item.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
+<% else %>
+  <p>♡<%= @item.favorites.count %> いいね</p>
+<% end %>

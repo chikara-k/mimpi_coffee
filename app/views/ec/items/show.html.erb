@@ -1,26 +1,25 @@
 <div class="container">
   <p style="padding-bottom: 120px;"></p>
   <div class="row">
-    <div class="col-lg-4" style="margin-right: 35px;"> <!--style="margin: 0 60px;"-->
-      <%= attachment_image_tag @item, :image, :size => '400x400' %>
+    <div class="col-lg-4">
+      <%= attachment_image_tag @item, :image, class: "img-responsive" %>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-4">
       <div class="row">
         <div class="col-lg-12">
           <h2 class="font-weight-bold"><%= @item.name %></h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-8 mt-2">
-          <% if @item.roasting_level == 1 %>
-          <h4>中煎り</h4>
-          <% elsif @item.roasting_level == 2 %>
-          <h4>浅煎り</h4>
+        <div class="col-lg-12 mt-2 border-bottom">
+          <% if @item.roasting_level == "中煎り" %>
+            <h4>中煎り</h4>
+          <% elsif @item.roasting_level == "浅煎り" %>
+            <h4>浅煎り</h4>
           <% else %>
-          <h4>深煎り</h4>
+            <h4>深煎り</h4>
           <% end %>
-          <p style="padding-bottom: 20px;"></p>
-          <ul style="list-style: none; padding-left: 5px;">
+          <ul style="list-style: none; padding: 5px;">
             <% if @item.taste_bitter == 1 %>
             <li>苦味：●</li>
             <% elsif @item.taste_bitter == 2 %>
@@ -77,53 +76,83 @@
             <li>コク：ー</li>
             <% end %>
           </ul>
-
           <p><%= @item.introduction %></p>
         </div>
-        <div class="col-lg-8 border-top">
-          <h7 class="ml-3"><span style="font-size: 1.5em;">¥<%= @item.price.to_s(:delimited) %></span> /100g</h7>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 mt-2">
+          <h7><span style="font-size: 1.5em;">¥<%= @item.price.to_s(:delimited) %></span> /100g</h7>
         </div>
+        <!--いいね機能-->
+        <div class="col-lg-6 mt-3" id="favorites_buttons_<%= @item.id %>">
+          <%= render 'ec/favorites/favorite', locals: { item: @item } %>
+        </div>
+        <!--ここまで-->
       </div>
 
-
-
       <%= form_with model: @cart_item, url: ec_cart_items_path do |f| %>
-      <div class="row ml-1" style="margin-top: 20px;">
-        <div class="col-lg-2">
+      <div class="row mt-3">
+        <div class="col-lg-3">
           <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %>
           <%= f.hidden_field :item_id, :value => @item.id %>
         </div>
-        <div class="col-lg-4 ml-3">
-          <%= f.submit "カートに入れる", class: "btn btn-outline-success btn-block" %>
+        <div class="col-lg-6">
+          <%= f.submit "カートに入れる", class: "btn btn-outline-success" %>
         </div>
       </div>
       <% end %>
     </div>
+
+    <!--map-->
+    <div class="col-lg-3">
+      <p>生産国を地図上で確認できます。</p>
+      <div class="row">
+        <div class="col-lg-12 mb-3">
+          <%= form_with url: ec_item_map_request_path(@item), method: :get do |f|%>
+          <div class="row">
+            <div class="col-lg-8">
+              <%= f.text_field :map_address %>
+            </div>
+            <div class="col-lg-4">
+              <%= f.submit '地図表示' %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" id="map"></div>
+        <style>
+        #map {
+          position: absolute;
+
+          width: 100%;
+          height: 100%;
+        }
+        </style>
+
+        <script>
+          let mapInstance
+
+          function initMap() {
+            mapInstance = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 24.397, lng: 139.644 },
+            zoom: 2,
+            });
+          }
+        </script>
+
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_KEY'] %>&callback=initMap&libraries=&v=weekly"
+          async
+        >
+        </script>
+      </div>
+    </div>
   </div>
 </div>
-<h2>gmap</h2>
-<div id="map"></div>
 
-<style>
-#map {
-  height: 600px;
-  width: 600px;
-}
-</style>
 
-<script>
-  let map;
 
-  function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
-    });
-  }
-</script>
 
-<script
-      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_KEY'] %>&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
-<p style="padding-bottom: 150px;"></p>
+

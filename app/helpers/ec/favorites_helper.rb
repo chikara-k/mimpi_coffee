@@ -1,0 +1,2 @@
+module Ec::FavoritesHelper
+end

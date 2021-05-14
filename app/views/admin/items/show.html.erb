@@ -1,113 +1,119 @@
 <div class="container">
   <h2 style="margin: 20px 0;">商品詳細</h2>
   <div class="row">
-    <div class="col-lg-4.5 px-3">
-      <%= attachment_image_tag @item, :image, :size => '400x400' %>
-    </div>
-    <div class="col-lg-3">
-
-      <h3><%= @item.name %></h3>
-
-      <% if @item.roasting_level == "中煎り" %>
-      <h4>中煎り</h4>
-      <% elsif @item.roasting_level == "浅煎り" %>
-      <h4>浅煎り</h4>
-      <% elsif @item.roasting_level == "深煎り" %>
-      <h4 style="padding-top: 5px">深煎り</h4>
-      <% else %>
-      <p></p>
-      <% end %>
-
-      <p style="height:2rem;"></p>
-
-      <ul style="list-style: none; padding-left: 5px;">
-        <% if @item.taste_bitter == 1 %>
-        <li style="padding-bottom: 5px">苦味：●</li>
-        <% elsif @item.taste_bitter == 2 %>
-        <li style="padding-bottom: 5px">苦味：● ●</li>
-        <% elsif @item.taste_bitter == 3 %>
-        <li style="padding-bottom: 5px">苦味：● ● ●</li>
-        <% elsif @item.taste_bitter == 4 %>
-        <li style="padding-bottom: 5px">苦味：● ● ● ● </li>
-        <% elsif @item.taste_bitter == 5 %>
-        <li style="padding-bottom: 5px">苦味：● ● ● ● ●</li>
-        <% else %>
-        <li style="padding-bottom: 5px">苦味：ー</li>
-        <% end %>
-
-        <% if @item.taste_sour == 1 %>
-        <li style="padding-bottom: 5px">酸味：●</li>
-        <% elsif @item.taste_sour == 2 %>
-        <li style="padding-bottom: 5px">酸味：● ●</li>
-        <% elsif @item.taste_sour == 3 %>
-        <li style="padding-bottom: 5px">酸味：● ● ●</li>
-        <% elsif @item.taste_sour == 4 %>
-        <li style="padding-bottom: 5px">酸味：● ● ● ● </li>
-        <% elsif @item.taste_sour == 5 %>
-        <li style="padding-bottom: 5px">酸味：● ● ● ● ●</li>
-        <% else %>
-        <li style="padding-bottom: 5px">酸味：ー</li>
-        <% end %>
-
-        <% if @item.taste_aroma == 1 %>
-        <li style="padding-bottom: 5px">香り：●</li>
-        <% elsif @item.taste_aroma == 2 %>
-        <li style="padding-bottom: 5px">香り：● ●</li>
-        <% elsif @item.taste_aroma == 3 %>
-        <li style="padding-bottom: 5px">香り：● ● ●</li>
-        <% elsif @item.taste_aroma == 4 %>
-        <li style="padding-bottom: 5px">香り：● ● ● ● </li>
-        <% elsif @item.taste_aroma == 5 %>
-        <li style="padding-bottom: 5px">香り：● ● ● ● ●</li>
-        <% else %>
-        <li style="padding-bottom: 5px">香り：ー</li>
-        <% end %>
-
-        <% if @item.taste_body == 1 %>
-        <li style="padding-bottom: 5px">コク：●</li>
-        <% elsif @item.taste_body == 2 %>
-        <li style="padding-bottom: 5px">コク：● ●</li>
-        <% elsif @item.taste_body == 3 %>
-        <li style="padding-bottom: 5px">コク：● ● ●</li>
-        <% elsif @item.taste_body == 4 %>
-        <li style="padding-bottom: 5px">コク：● ● ● ● </li>
-        <% elsif @item.taste_body == 5 %>
-        <li style="padding-bottom: 5px">コク：● ● ● ● ●</li>
-        <% else %>
-        <li style="padding-bottom: 5px">コク：ー</li>
-        <% end %>
-
-        <p style="height:1rem;"></p>
-
-        <h6 class="col-lg-12 text-wrap"><%= @item.introduction %></h6>
-      </ul>
-
-      <!--#? ここまで-->
+    <div class="col-lg-4">
+      <%= attachment_image_tag @item, :image, class: "img-responsive" %>
     </div>
     <div class="col-lg-4">
-
-      <p style="height:15rem;"></p>
-
-      <table class="table table-borderless">
-        <tr class="d-flex">
-          <th class="col-4">
-            <p>税込価格</p>
-            <p>(税抜価格)</p>
-
-            <% if @item.is_sales == true %>
-            <p class = "text-success">販売中</p>
-            <% elsif @item.is_sales == false %>
-            <p class = "text-secondary">販売停止中</p>
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="font-weight-bold"><%= @item.name %></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 mt-2">
+          <% if @item.roasting_level == "中煎り" %>
+            <h4>中煎り</h4>
+          <% elsif @item.roasting_level == "浅煎り" %>
+            <h4>浅煎り</h4>
+          <% elsif @item.roasting_level == "深煎り" %>
+            <h4 style="padding-top: 5px">深煎り</h4>
+          <% end %>
+          <ul style="list-style: none; padding: 5px;">
+            <% if @item.taste_bitter == 1 %>
+            <li style="padding-bottom: 5px">苦味：●</li>
+            <% elsif @item.taste_bitter == 2 %>
+            <li style="padding-bottom: 5px">苦味：● ●</li>
+            <% elsif @item.taste_bitter == 3 %>
+            <li style="padding-bottom: 5px">苦味：● ● ●</li>
+            <% elsif @item.taste_bitter == 4 %>
+            <li style="padding-bottom: 5px">苦味：● ● ● ● </li>
+            <% elsif @item.taste_bitter == 5 %>
+            <li style="padding-bottom: 5px">苦味：● ● ● ● ●</li>
+            <% else %>
+            <li style="padding-bottom: 5px">苦味：ー</li>
             <% end %>
 
-          </th>
-          <td class="col-4">
-            <p class="font-weight-bold"><%= (@item.price * 1.1).round %>円</p>
-            <p class="font-weight-bold"><%= @item.price %>円</p>
-            <p><%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-outline-success btn-block" %></p>
-          </td>
-        </tr>
-      </table>
+            <% if @item.taste_sour == 1 %>
+            <li style="padding-bottom: 5px">酸味：●</li>
+            <% elsif @item.taste_sour == 2 %>
+            <li style="padding-bottom: 5px">酸味：● ●</li>
+            <% elsif @item.taste_sour == 3 %>
+            <li style="padding-bottom: 5px">酸味：● ● ●</li>
+            <% elsif @item.taste_sour == 4 %>
+            <li style="padding-bottom: 5px">酸味：● ● ● ● </li>
+            <% elsif @item.taste_sour == 5 %>
+            <li style="padding-bottom: 5px">酸味：● ● ● ● ●</li>
+            <% else %>
+            <li style="padding-bottom: 5px">酸味：ー</li>
+            <% end %>
+
+            <% if @item.taste_aroma == 1 %>
+            <li style="padding-bottom: 5px">香り：●</li>
+            <% elsif @item.taste_aroma == 2 %>
+            <li style="padding-bottom: 5px">香り：● ●</li>
+            <% elsif @item.taste_aroma == 3 %>
+            <li style="padding-bottom: 5px">香り：● ● ●</li>
+            <% elsif @item.taste_aroma == 4 %>
+            <li style="padding-bottom: 5px">香り：● ● ● ● </li>
+            <% elsif @item.taste_aroma == 5 %>
+            <li style="padding-bottom: 5px">香り：● ● ● ● ●</li>
+            <% else %>
+            <li style="padding-bottom: 5px">香り：ー</li>
+            <% end %>
+
+            <% if @item.taste_body == 1 %>
+            <li style="padding-bottom: 5px">コク：●</li>
+            <% elsif @item.taste_body == 2 %>
+            <li style="padding-bottom: 5px">コク：● ●</li>
+            <% elsif @item.taste_body == 3 %>
+            <li style="padding-bottom: 5px">コク：● ● ●</li>
+            <% elsif @item.taste_body == 4 %>
+            <li style="padding-bottom: 5px">コク：● ● ● ● </li>
+            <% elsif @item.taste_body == 5 %>
+            <li style="padding-bottom: 5px">コク：● ● ● ● ●</li>
+            <% else %>
+            <li style="padding-bottom: 5px">コク：ー</li>
+            <% end %>
+          </ul>
+          <p><%= @item.introduction %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4" style="margin-top: 200px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td><b>税込価格</b></td>
+                <td><b><%= (@item.price * 1.1).round %>円</b></td>
+              </tr>
+              <tr>
+                <td>(税抜価格)</td>
+                <td><%= @item.price %>円</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 ml-3">
+          <% if @item.is_sales == true %>
+            <h4 class = "text-success">販売中</h4>
+          <% elsif @item.is_sales == false %>
+            <h4 class = "text-secondary">販売停止中</h4>
+          <% end %>
+        </div>
+        <div class="col-lg-5">
+          <p><%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-outline-success" %></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+
