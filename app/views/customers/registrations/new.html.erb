@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-lg-8">
       <h3 style="padding: 20px 0;">新規会員登録</h3>
-        <%#= render 'layouts/error', model: resource %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        
         <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
         <label for="name">お名前(必須)</label>
         <div class="form-row">
@@ -51,13 +52,10 @@
         <div class="form-group">
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "確認のため再度ご入力ください。" %>
         </div>
-
-        <p style="height:2px;"></p>
         <div class="actions">
-          <%= f.submit "新規登録", class: "btn btn btn-outline-success" %>
+          <%= f.submit "新規登録", class: "btn btn-outline-light mb-5", style: "background-color: #daa965;" %>
         </div>
         <% end %>
-        <p style="height:2px;"></p>
         <h4>既に登録済みの方</h4>
         <p><%= link_to "こちら",  new_customer_session_path %><span>からログインしてください。</span></p>
     </div>

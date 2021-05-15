@@ -6,7 +6,6 @@ class Ec::ItemsController < ApplicationController
     @african_coffee = Item.where(genre_id: 3, is_sales: true)
     @latian_america_coffee = Item.where(genre_id: 4, is_sales: true)
     @others = Item.where(genre_id: 5, is_sales: true)
-    
   end
 
   def show
@@ -17,7 +16,7 @@ class Ec::ItemsController < ApplicationController
   def map
     results = Geocoder.search(params[:map_address])
     @latlng = results.first.coordinates
-  
+
     respond_to do |format|
       format.js
     end

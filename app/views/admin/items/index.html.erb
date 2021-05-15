@@ -2,7 +2,7 @@
   <h2 style="padding-top: 20px;">商品一覧</h2>
   <div class="row">
     <div class="col-12">
-        <%= link_to " 新規登録", new_admin_item_path, class: "fas fa-plus float-right mb-3 btn btn-outline-success" %>
+        <%= link_to "＋ 新規登録", new_admin_item_path, class: "float-right mb-3 btn btn-outline-success" %>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
     </div>
   </div>
   <%= render 'admin/items/list', item: @others %>
-  
+
 </div>
 
 
