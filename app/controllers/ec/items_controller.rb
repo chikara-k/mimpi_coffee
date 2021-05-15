@@ -6,6 +6,7 @@ class Ec::ItemsController < ApplicationController
     @african_coffee = Item.where(genre_id: 3, is_sales: true)
     @latian_america_coffee = Item.where(genre_id: 4, is_sales: true)
     @others = Item.where(genre_id: 5, is_sales: true)
+    
   end
 
   def show

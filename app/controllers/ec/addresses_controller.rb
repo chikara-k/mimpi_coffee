@@ -1,11 +1,11 @@
 class Ec::AddressesController < ApplicationController
   before_action :authenticate_customer!
-  
+
   def index
     @address = Address.new
     @addresses = current_customer.addresses
   end
-  
+
   def create
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
@@ -17,11 +17,11 @@ class Ec::AddressesController < ApplicationController
       render :index
     end
   end
-  
+
   def edit
     @address = Address.find(params[:id])
   end
-  
+
   def update
     @address = Address.find(params[:id])
     if @address.update(address_params)
@@ -31,7 +31,7 @@ class Ec::AddressesController < ApplicationController
       render "edit"
     end
   end
-  
+
   def destroy
     @address = Address.find(params[:id])
     @address.destroy
@@ -39,7 +39,7 @@ class Ec::AddressesController < ApplicationController
     flash[:success] = "配送先を削除しました"
     redirect_to ec_addresses_path
   end
-  
+
   private
 
   def address_params

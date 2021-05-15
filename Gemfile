@@ -69,8 +69,9 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'pry-byebug'
-gem 'payjp'
 gem 'geocoder'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 gem 'dotenv-rails'
 group :production do

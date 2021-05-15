@@ -28,16 +28,19 @@ body {
 
 footer {
   bottom: 0;
-  height: 64px;
+  height: 65px;
   position: absolute;
   width: 100%;
-
-  border-top: 1px solid lightgrey;
-  text-align: center;
 }
 
 .img-responsive {
   display: block;
   height: auto;
   max-width: 100%;
+}
+
+.footer-contact {
+  position: absolute;
+	right: 10px;
+	top: 10px;
 }
