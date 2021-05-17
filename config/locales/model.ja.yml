@@ -7,6 +7,7 @@ ja:
       order: 注文
       order_detail: 注文詳細
       genre: ジャンル
+      contact: お問い合わせ
     attributes:
       item:
         genre_id: ジャンル
@@ -39,3 +40,7 @@ ja:
         subtotal: 小計
       genre:
         name: ジャンル名
+      contact:
+        name: お名前
+        email: メールアドレス
+        message: お問い合わせ内容

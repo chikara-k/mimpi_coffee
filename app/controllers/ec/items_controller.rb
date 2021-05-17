@@ -1,6 +1,5 @@
 class Ec::ItemsController < ApplicationController
   def index
-    # @items = Item.where(is_sales: true)
     @blended_coffee = Item.where(genre_id: 1, is_sales: true)
     @asian_coffee = Item.where(genre_id: 2, is_sales: true)
     @african_coffee = Item.where(genre_id: 3, is_sales: true)
