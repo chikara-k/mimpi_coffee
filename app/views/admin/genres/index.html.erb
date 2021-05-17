@@ -2,7 +2,9 @@
  <div class="row">
   <div class="col-lg-6">
     <h2 style="padding: 20px 0;">ジャンル一覧・編集</h2>
-    <%= flash[:success] %>
+    <div id="error_explanation">
+      <%= render 'layouts/error', model: @genre %>
+    </div>
     <%= form_with model: @genre, url: admin_genres_path,local:true do |f| %>
       <div class="form-group">
         <%= f.label :"ジャンル名" %>

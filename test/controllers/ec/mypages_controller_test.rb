@@ -5,5 +5,4 @@ class Ec::MypagesControllerTest < ActionDispatch::IntegrationTest
     get ec_mypages_show_url
     assert_response :success
   end
-
 end

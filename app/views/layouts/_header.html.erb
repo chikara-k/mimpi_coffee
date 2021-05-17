@@ -1,8 +1,11 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #daa965">
     <div class="container">
-      <%= link_to image_tag("img/mimpi_mark.png", :size => '160x60'), "/" %>
-         <!--render 'layouts/notifications' -->
+      <% if admin_signed_in? %>
+        <%= link_to image_tag("img/mimpi_mark.png", :size => '160x60'), "/admin" %>
+      <% else %>
+        <%= link_to image_tag("img/mimpi_mark.png", :size => '160x60'), "/" %>
+      <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

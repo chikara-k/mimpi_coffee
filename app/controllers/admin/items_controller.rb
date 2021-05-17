@@ -20,6 +20,7 @@ class Admin::ItemsController < ApplicationController
       redirect_to admin_item_path(@item)
     else
       @items = Item.all
+      render :new
     end
   end
 
@@ -44,7 +45,7 @@ class Admin::ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
-      flash[:success] = "商品内容を削除しました"
+      flash[:notice] = "商品内容を削除しました"
       redirect_to admin_items_path
     else
       render :index
@@ -54,6 +55,16 @@ class Admin::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:genre_id, :name, :image, :taste_bitter, :taste_sour, :taste_aroma, :taste_body, :roasting_level, :introduction, :price, :is_sales)
+    params.require(:item).permit(:genre_id,
+                                 :name,
+                                 :image,
+                                 :taste_bitter,
+                                 :taste_sour,
+                                 :taste_aroma,
+                                 :taste_body,
+                                 :roasting_level,
+                                 :introduction,
+                                 :price,
+                                 :is_sales)
   end
 end

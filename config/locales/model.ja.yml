@@ -1,0 +1,41 @@
+ja:
+  activerecord:
+    models:
+      item: 商品
+      address: 住所
+      cart_item: カート内商品
+      order: 注文
+      order_detail: 注文詳細
+      genre: ジャンル
+    attributes:
+      item:
+        genre_id: ジャンル
+        name: 商品名
+        image: 商品画像
+        taste_bitter: 苦味
+        taste_sour: 酸味
+        taste_aroma: 香り
+        taste_body: コク
+        roasting_level: 焙煎度
+        introduction: 商品説明文
+        price: 税抜価格
+        is_sales: 販売ステータス
+      address:
+        name: 宛名
+        postal_code: 郵便番号
+        address: 住所
+      cart_item:
+        amount: 数量
+      order:
+        postal_code: 郵便番号
+        address: 住所
+        name: 名前
+        shipping_cost: 送料
+        total_payment: 請求額
+        payment_method: 支払い方法
+        order_status: 注文ステータス
+      order_detail:
+        amount: 数量
+        subtotal: 小計
+      genre:
+        name: ジャンル名

@@ -2,6 +2,9 @@
  <div class="row">
    <div class="col-lg-6">
     <h2 style="padding: 20px 0;">ジャンル編集</h2>
+      <div id="error_explanation">
+        <%= render 'layouts/error', model: @genre %>
+      </div>
     <%= form_with model:@genre, url: admin_genre_path(@genre.id), local:true do |f| %>
       <div>
         <%= f.label :"ジャンル名" %>

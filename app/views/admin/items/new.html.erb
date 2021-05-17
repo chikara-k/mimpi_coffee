@@ -1,5 +1,8 @@
 <div class="container">
   <h2 style="margin: 20px 0;">商品新規登録</h2>
+  <div id="error_explanation">
+    <%= render 'layouts/error', model: @item %>
+  </div>
   <div class="row">
     <%= form_with model:@item, url: admin_items_path(@item), local:true do |f| %>
       <%= render 'admin/items/input', f: f %>

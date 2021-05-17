@@ -1,5 +1,8 @@
 <div class="container">
   <h3 style="padding: 20px 0;">配送先登録/一覧</h3>
+  <div id="error_explanation">
+    <%= render 'layouts/error', model: @address %>
+  </div>
   <div class="row">
     <div class="col-lg-12">
       <%= form_with model:@address, url: ec_addresses_path, local:true do |f| %>

@@ -1,5 +1,8 @@
 <div class = "container">
-  <h2 style="padding: 20px 0;"><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h2>
+  <h2 style="padding: 20px 0;"><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h2>
+  <div id="error_explanation">
+    <%= render 'layouts/error', model: @customer %>
+  </div>
   <div class = "row">
     <div class="col-lg-12">
       <%= form_with model:@customer, url:admin_customer_path(@customer),local:true do |f| %>

@@ -50,4 +50,19 @@
       </div>
     <% end %>
   </div>
+  <h2 style="padding: 20px 0;">おすすめ商品</h2>
+  <div class="row">
+
+    <% @items.each do |item| %>
+    <div class="col-lg-3">
+      <%= link_to ec_item_path(item) do %>
+        <%= attachment_image_tag item, :image, :size => "230x230" %>
+      <% end %>
+      <p>
+        <%= item.name %><br>
+        <%= item.price.to_s(:delimited) %>円
+      </p>
+    </div>
+    <% end %>
+  </div>
 </div>

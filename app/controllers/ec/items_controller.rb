@@ -25,6 +25,16 @@ class Ec::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:genre_id, :name, :image, :taste_bitter, :taste_sour, :taste_aroma, :taste_body, :roasting_level, :introduction, :price, :is_sales)
+    params.require(:item).permit(:genre_id,
+                                 :name,
+                                 :image,
+                                 :taste_bitter,
+                                 :taste_sour,
+                                 :taste_aroma,
+                                 :taste_body,
+                                 :roasting_level,
+                                 :introduction,
+                                 :price,
+                                 :is_sales)
   end
 end

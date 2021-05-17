@@ -10,5 +10,4 @@ class Ec::CustomersControllerTest < ActionDispatch::IntegrationTest
     get ec_customers_edit_url
     assert_response :success
   end
-
 end

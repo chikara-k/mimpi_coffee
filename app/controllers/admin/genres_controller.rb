@@ -1,6 +1,6 @@
 class Admin::GenresController < ApplicationController
   before_action :authenticate_admin!
-  
+
   def index
     @genre = Genre.new
     @genres = Genre.all
@@ -34,7 +34,7 @@ class Admin::GenresController < ApplicationController
   def destroy
     @genre = Genre.find(params[:id])
     if @genre.destroy
-      flash[:success] = "ジャンルを削除しました"
+      flash[:notice] = "ジャンルを削除しました"
       redirect_to admin_genres_path
     else
       render :index

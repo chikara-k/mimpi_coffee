@@ -5,5 +5,4 @@ class Ec::AddressesControllerTest < ActionDispatch::IntegrationTest
     get ec_addresses_index_url
     assert_response :success
   end
-
 end

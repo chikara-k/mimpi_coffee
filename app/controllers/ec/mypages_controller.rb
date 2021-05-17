@@ -7,5 +7,7 @@ class Ec::MypagesController < ApplicationController
     else
       redirect_to customers_sign_in_path
     end
+
+    @items = Item.last(4)
   end
 end

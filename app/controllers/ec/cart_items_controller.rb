@@ -3,7 +3,7 @@ class Ec::CartItemsController < ApplicationController
 
   def index
     @cart_items = current_customer.cart_items
-    @tax=1.1
+    @tax = 1.1
     @item_total = 0
     @cart_items.each do |cart_item|
       @item_total += cart_item.item.price * cart_item.amount
@@ -23,7 +23,6 @@ class Ec::CartItemsController < ApplicationController
     else
       @cart_item.save
     end
-
     redirect_to ec_cart_items_path
   end
 
@@ -38,12 +37,6 @@ class Ec::CartItemsController < ApplicationController
     @cart_item.destroy
     redirect_to ec_cart_items_path
   end
-
-  # def empty
-  #   @cart_items = CartItem.where(customer_id: current_customer)
-  #   @cart_items.destroy_all
-  #   redirect_to ec_cart_items_path
-  # end
 
   private
 

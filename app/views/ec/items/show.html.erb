@@ -93,7 +93,7 @@
       <%= form_with model: @cart_item, url: ec_cart_items_path do |f| %>
       <div class="row mt-3">
         <div class="col-lg-3">
-          <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %>
+          <%= f.select :amount, options_for_select((1..10).to_a) %> 個
           <%= f.hidden_field :item_id, :value => @item.id %>
         </div>
         <div class="col-lg-6">

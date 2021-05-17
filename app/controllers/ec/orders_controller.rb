@@ -2,6 +2,7 @@ class Ec::OrdersController < ApplicationController
   before_action :authenticate_customer!
 
   def new
+    return redirect_to ec_cart_items_path if current_customer.cart_items.blank?
     @orders = Order.new
     @customer = current_customer
   end
@@ -51,8 +52,8 @@ class Ec::OrdersController < ApplicationController
           item_id: cart_item.item.id,
           order_id: @order.id,
           amount: cart_item.amount,
-          price: ( cart_item.item.price * 1.1).to_i,
-          subtotal: ((cart_item.item.price.to_i * cart_item.amount)*1.1).to_i
+          price: (cart_item.item.price * 1.1).to_i,
+          subtotal: ((cart_item.item.price.to_i * cart_item.amount) * 1.1).to_i
         )
         order_item.save
         cart_item.destroy
@@ -88,9 +89,13 @@ class Ec::OrdersController < ApplicationController
   end
 
   private
-  
-  def order_params
-    params.require(:order).permit(:customer_id, :address_id, :name, :address, :postal_code, :payment_method)
-  end
 
+  def order_params
+    params.require(:order).permit(:customer_id,
+                                  :address_id,
+                                  :name,
+                                  :address,
+                                  :postal_code,
+                                  :payment_method)
+  end
 end

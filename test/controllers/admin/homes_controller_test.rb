@@ -5,5 +5,4 @@ class Admin::HomesControllerTest < ActionDispatch::IntegrationTest
     get admin_homes_top_url
     assert_response :success
   end
-
 end

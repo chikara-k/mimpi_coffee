@@ -32,7 +32,7 @@ class ContactsController < ApplicationController
     @inquiry = inquiry
     mail(
       from: 'system@example.com',
-      to:   'manager@example.com',
+      to: 'manager@example.com',
       subject: 'お問い合わせ通知'
     )
   end
@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact)
-          .permit(:email, :name, :message)
+    params.require(:contact).
+      permit(:email, :name, :message)
   end
 end

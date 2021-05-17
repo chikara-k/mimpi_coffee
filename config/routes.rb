@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-# 管理者側
+  # 管理者側
   devise_for :admins, controllers: {
-  	sessions: 'admins/sessions'
+    sessions: 'admins/sessions',
   }
 
   devise_scope :admins do
-   get 'admins/sign_in' => 'admins/sessions#create'
-	 get 'admins/sign_out' => 'admins/sessions#destroy'
+    get 'admins/sign_in' => 'admins/sessions#create'
+    get 'admins/sign_out' => 'admins/sessions#destroy'
   end
-
 
   namespace :admin do
     root to: 'homes#top'
@@ -18,19 +17,17 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show, :update]
   end
 
-
-# ユーザー側
+  # ユーザー側
   devise_for :customers, controllers: {
-  	sessions: 'customers/sessions',
-  	passwords: 'customers/passwords',
-  	registrations: 'customers/registrations'
+    sessions: 'customers/sessions',
+    passwords: 'customers/passwords',
+    registrations: 'customers/registrations',
   }
 
   devise_scope :customers do
-	 get 'customers/sign_in' => 'customers/sessions#create'
-	 get 'customers/sign_out' => 'customers/sessions#destroy'
+    get 'customers/sign_in' => 'customers/sessions#create'
+    get 'customers/sign_out' => 'customers/sessions#destroy'
   end
-
 
   root to: 'homes#top'
   get '/about' => 'homes#about'
@@ -41,7 +38,6 @@ Rails.application.routes.draw do
   get 'done', to: 'contacts#done', as: 'done'
 
   namespace :customers do
-
   end
 
   namespace :ec do
@@ -50,12 +46,7 @@ Rails.application.routes.draw do
       get 'map_request', to: 'items#map', as: 'map_request'
     end
 
-
-    resources :cart_items, only: [:index, :create, :update, :destroy] #do
-      # collection do
-      #   delete 'empty'
-      # end
-    #end
+    resources :cart_items, only: [:index, :create, :update, :destroy]
 
     get 'orders/confirm' => 'orders#confirm'
     get 'orders/complete' => 'orders#complete'
@@ -65,8 +56,8 @@ Rails.application.routes.draw do
 
     resources :customers, only: [:show, :edit, :update] do
       member do
-        get "confirm"  #会員情報の取得
-        patch "hide"  #退会処理
+        get "confirm" # 会員情報の取得
+        patch "hide" # 退会処理
       end
     end
 

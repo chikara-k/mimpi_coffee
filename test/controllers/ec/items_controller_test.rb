@@ -10,5 +10,4 @@ class Ec::ItemsControllerTest < ActionDispatch::IntegrationTest
     get ec_items_show_url
     assert_response :success
   end
-
 end

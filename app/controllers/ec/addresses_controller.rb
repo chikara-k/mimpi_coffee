@@ -36,7 +36,7 @@ class Ec::AddressesController < ApplicationController
     @address = Address.find(params[:id])
     @address.destroy
     @addresses = current_customer.addresses
-    flash[:success] = "配送先を削除しました"
+    flash[:notice] = "配送先を削除しました"
     redirect_to ec_addresses_path
   end
 

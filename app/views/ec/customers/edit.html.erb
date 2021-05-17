@@ -1,5 +1,8 @@
 <div class="container">
   <h3 style="padding: 20px 0;">会員情報変更</h3>
+  <div id="error_explanation">
+    <%= render 'layouts/error', model: @customer %>
+  </div>
   <%= form_with model:@customer, url: ec_customer_path, local: true do |f| %>
   <div class="row">
     <div class="col-lg-8">
@@ -12,7 +15,7 @@
           <%= f.text_field :first_name, class: 'form-control', placeholder: "名 (例：太郎)" %>
         </div>
       </div>
-      
+
       <label for="name-kana">ふりがな(必須)</label>
       <div class="form-row">
         <div class="form-group col-lg-6">
@@ -22,27 +25,27 @@
           <%= f.text_field :first_name_kana, class: 'form-control', placeholder: "めい (例：たろう)" %>
         </div>
       </div>
-      
+
       <label for="mail">メールアドレス</label>
       <div class="form-group">
         <%= f.email_field :email, autocomplete: "email", class: 'form-control', placeholder: "例：sample@mimpicoffee.com" %>
       </div>
-      
+
        <label for="postal_code">郵便番号(ハイフンなし)</label>
         <div class="form-group">
           <%= f.text_field :postal_code, autocomplete: "postal_code", class: 'form-control', placeholder: "例：1234567" %>
         </div>
-        
+
         <label for="address">住所</label>
         <div class="form-group">
           <%= f.text_field :address, autocomplete: "address", class: 'form-control', placeholder: "例：宮崎県宮崎市大坪東〇〇ー〇〇ー〇〇　ビル名　部屋番号" %>
         </div>
-        
+
         <label for="telephone_number">電話番号(ハイフンなし)</label>
         <div class="form-group">
           <%= f.text_field :telephone_number, autocomplete: "telephone_number", class: 'form-control', placeholder: "例：09012345678" %>
         </div>
-        
+
         <div class="actions mt-4 mb-4">
           <%= f.submit '編集内容を保存', class: "btn btn btn-outline-success" %>
         </div>

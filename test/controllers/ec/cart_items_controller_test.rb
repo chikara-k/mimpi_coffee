@@ -5,5 +5,4 @@ class Ec::CartItemsControllerTest < ActionDispatch::IntegrationTest
     get ec_cart_items_index_url
     assert_response :success
   end
-
 end

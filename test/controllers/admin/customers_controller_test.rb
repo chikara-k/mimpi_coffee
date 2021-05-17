@@ -15,5 +15,4 @@ class Admin::CustomersControllerTest < ActionDispatch::IntegrationTest
     get admin_customers_show_url
     assert_response :success
   end
-
 end

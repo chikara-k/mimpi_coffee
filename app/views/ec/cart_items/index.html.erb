@@ -2,7 +2,7 @@
   <h2 style="padding: 20px 0;">お買い物かご</h2>
   <div class="row">
     <div class="col-lg-12">
-      <!--< link_to "カートを空にする", ec_empty_cart_items_path, method: :delete, class: "btn btn-sm btn-danger mt-2" %>-->
+
       <table class="table table-bordered">
         <thead>
           <th scope="col" class="text-center">削除</th>
@@ -61,7 +61,9 @@
           </tr>
         </tbody>
       </table>
+      <% if @cart_items.present? %>
       <p><%= link_to "情報入力に進む", new_ec_order_path, class: "btn btn-outline-light btn-block", style: "background-color: #daa965;" %></p>
+      <% end %>
     </div>
   </div>
 </div>

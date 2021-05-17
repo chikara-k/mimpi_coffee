@@ -44,3 +44,29 @@ footer {
 	right: 10px;
 	top: 10px;
 }
+
+.field_with_errors {
+background-color: #fcc;
+padding: 2px;
+}
+
+.error {
+  color: white;
+  text-align: center;
+
+  .notice {
+    background-color: #F4511E;
+  }
+
+  .success {
+    background-color: lightGreen;
+  }
+
+  .alert {
+    background-color: #F4511E;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+
+}

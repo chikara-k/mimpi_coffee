@@ -16,7 +16,7 @@ class Ec::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-       flash.now[:notice] = "登録情報が編集されました"
+      flash[:success] = "登録情報が編集されました"
       redirect_to ec_customer_path(@customer.id)
     else
       render "edit"
@@ -40,6 +40,6 @@ class Ec::CustomersController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana,
-      :postal_code, :address, :email, :telephone_number, :is_active)
+                                     :postal_code, :address, :email, :telephone_number, :is_active)
   end
 end
