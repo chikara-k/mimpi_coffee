@@ -1,5 +1,6 @@
 class Ec::CustomersController < ApplicationController
   before_action :authenticate_customer!
+  before_action :ensure_normal_customer, only: %i[edit hide]
 
   def show
     if current_customer.id.to_s == params[:id]
@@ -28,9 +29,9 @@ class Ec::CustomersController < ApplicationController
   end
 
   def hide
-    @cusromer = Customer.find(current_customer.id)
-    @cusromer.update(is_active: false)
-    p @cusromer
+    @customer = Customer.find(current_customer.id)
+    @customer.update(is_active: false)
+    p @customer
     reset_session
     flash[:notice] = "退会しました。"
     redirect_to root_path
@@ -48,5 +49,11 @@ class Ec::CustomersController < ApplicationController
                                      :email,
                                      :telephone_number,
                                      :is_active)
+  end
+
+  def ensure_normal_customer
+    if current_customer.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
+    end
   end
 end

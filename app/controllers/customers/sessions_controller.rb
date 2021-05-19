@@ -4,6 +4,12 @@ class Customers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   before_action :reject_customer, only: [:create]
 
+  def guest_sign_in
+    customer = Customer.guest
+    sign_in customer
+    redirect_to ec_mypage_path(current_customer.id)
+    flash[:notice] = "ゲストユーザーとしてログインしました。"
+  end
   # GET /resource/sign_in
   # def new
   #   super

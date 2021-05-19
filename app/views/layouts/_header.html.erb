@@ -58,6 +58,9 @@
             <li class="nav-item">
               <%= link_to "ログイン", new_customer_session_path, class: "nav-link text-dark font-weight-bold fas fa-sign-in-alt" %>
             </li>
+            <li class="nav-item">
+              <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "nav-link text-dark font-weight-bold fas fa-sign-in-alt" %>
+            </li>
           <% end %>
         </ul>
       </div>

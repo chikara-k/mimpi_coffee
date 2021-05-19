@@ -19,7 +19,7 @@
           <%= f.text_field :address, autocomplete: "address", class: 'form-control', placeholder: "例：宮崎県宮崎市大坪東〇〇ー〇〇ー〇〇　ビル名　部屋番号" %>
         </div>
         <div class="col-lg-2">
-          <%= f.submit "新規登録", class: "btn btn-success btn-block" %>
+          <%= f.submit "新規登録", class: "btn btn-outline-light btn-block", style: "background-color: #daa965;" %>
         </div>
       <% end %>
     </div>
@@ -52,7 +52,7 @@
               <%= address.address %>
             </td>
             <td class="text-center">
-              <%= link_to "編集", edit_ec_address_path(address), class: "btn btn-outline-primary" %>
+              <%= link_to "編集", edit_ec_address_path(address), class: "btn btn-outline-secondary" %>
             </td>
           </tr>
         </tbody>

@@ -25,9 +25,6 @@
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0
 
-### 画面遷移図
-https://drive.google.com/file/d/1iog5KFNkBpvBs-NrXtXJWD5-oDCgp_Xy/view?usp=sharing
-
 ### ER図
 https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing
 

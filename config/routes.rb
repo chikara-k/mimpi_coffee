@@ -21,12 +21,13 @@ Rails.application.routes.draw do
   devise_for :customers, controllers: {
     sessions: 'customers/sessions',
     passwords: 'customers/passwords',
-    registrations: 'customers/registrations',
+    registrations: 'customers/registrations'
   }
 
-  devise_scope :customers do
+  devise_scope :customer do
     get 'customers/sign_in' => 'customers/sessions#create'
     get 'customers/sign_out' => 'customers/sessions#destroy'
+    post 'customers/guest_sign_in' => 'customers/sessions#guest_sign_in'
   end
 
   root to: 'homes#top'
@@ -56,8 +57,8 @@ Rails.application.routes.draw do
 
     resources :customers, only: [:show, :edit, :update] do
       member do
-        get "confirm" # 会員情報の取得
-        patch "hide" # 退会処理
+        get "confirm"
+        patch "hide"
       end
     end
 
