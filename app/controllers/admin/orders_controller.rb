@@ -2,7 +2,7 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @orders = Order.all.order(created_at: :desc)
+    @orders = Order.all.order(created_at: :desc).includes([:customer, :order_details])
   end
 
   def show

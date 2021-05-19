@@ -32,7 +32,7 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  
+
 
   config.action_mailer.perform_caching = false
 
@@ -59,7 +59,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       port: 587,
@@ -69,4 +69,13 @@ Rails.application.configure do
       password: ENV['SMTP_PASSWORD'],
       enable_starttls_auto: true
   }
+
+  config.after_initialize do
+    Bullet.enable = true #Bullet gemを有効
+    Bullet.alert = false #ブラウザにJavaScriptアラートをポップアップ
+    Bullet.bullet_logger = true #Bulletログファイル（Rails.root/log/bullet.log）に記録
+    Bullet.console = true #警告をブラウザーのconsole.logに記録
+    Bullet.rails_logger = true #警告を直接Railsログに追加
+  end
+
 end

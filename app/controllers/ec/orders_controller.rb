@@ -66,7 +66,7 @@ class Ec::OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.where(customer_id: current_customer)
+    @orders = Order.where(customer_id: current_customer).includes([:order_details])
   end
 
   def update
