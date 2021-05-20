@@ -100,7 +100,7 @@
           <% if customer_signed_in? %>
             <%= f.submit "カートに入れる", class: "btn btn-outline-light", style: "background-color: #daa965;" %>
           <% else %>
-            <%= link_to "購入にはログインが必要です", new_customer_session_path, class: "btn btn-outline-light", style: "background-color: #daa965;" %>
+            <%= link_to "購入にはログインが必要です", new_customer_session_path, class: "btn btn-outline-light mb-2", style: "background-color: #daa965;" %>
           <% end %>
         </div>
       </div>

@@ -3,6 +3,8 @@ require 'rails_helper'
 describe '[ユーザログイン後のテスト]' do
   let(:customer) { create(:customer) }
   let!(:other_customer) { create(:customer) }
+  let!(:item) { create(:item) }
+
 
   before do
     visit new_customer_session_path

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :cart_item do
-    amount { Faker::Number.unique.number(1) }
+    amount { 5 }
     customer
   end
 end
