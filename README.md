@@ -50,7 +50,7 @@ https://drive.google.com/file/d/1d1iHwrQb43sJXII_D6hCGHzmM_PNdMO5/view?usp=shari
 - Rails 5.2.5
 
 ### 本番環境
-- AWS(EC2、 RDS for MySQL)
+- AWS(EC2、 RDS for MySQL、Route53)
 - MySQL 5.7.22
 - Nginx、 Puma
 
