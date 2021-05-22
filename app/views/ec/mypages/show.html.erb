@@ -62,40 +62,42 @@
     　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
       <script>
-        var ctx = document.getElementById("myRaderChart");
-
-        var myRadarChart = new Chart(ctx, {
-            type: 'radar',
-
-
-            data: {
-              labels: ["苦味", "香り", "酸味", "コク"],
-              datasets: [{
-                  label: '<%= @customer.last_name %><%= @customer.first_name %>さん',
-                  data: [<%= @taste_bitter_average %>, <%= @taste_sour_average %>, <%= @taste_aroma_average %>, <%= @taste_body_average %>],
-                  backgroundColor: 'RGBA(236,140,50,0.5)',
-                  borderColor: 'RGBA(69,87,172,1)',
-                  borderWidth: 2,
-                  pointBackgroundColor: 'RGB(69,87,172)',
-              }]
-            },
-
-            options: {
-              responsive: true,
-              scale:{
-                pointLabels:{
-                  fontSize: 20,
-                  fontColor:"black"
-                },
-                ticks:{
-                    suggestedMin: 0,
-                    suggestedMax: 5,
-                    stepSize: 0.5,
-                }
+        $(document).on("turbolinks:load", function(){
+          var ctx = document.getElementById("myRaderChart");
+  
+          var myRadarChart = new Chart(ctx, {
+              type: 'radar',
+  
+  
+              data: {
+                labels: ["苦味", "香り", "酸味", "コク"],
+                datasets: [{
+                    label: '<%= @customer.last_name %><%= @customer.first_name %>さん',
+                    data: [<%= @taste_bitter_average %>, <%= @taste_sour_average %>, <%= @taste_aroma_average %>, <%= @taste_body_average %>],
+                    backgroundColor: 'RGBA(236,140,50,0.5)',
+                    borderColor: 'RGBA(69,87,172,1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'RGB(69,87,172)',
+                }]
               },
-            }
+  
+              options: {
+                responsive: true,
+                scale:{
+                  pointLabels:{
+                    fontSize: 20,
+                    fontColor:"black"
+                  },
+                  ticks:{
+                      suggestedMin: 0,
+                      suggestedMax: 5,
+                      stepSize: 0.5,
+                  }
+                },
+              }
+          });
         });
-        </script>
+      </script>
     </div>
     <div class="col-lg-1"></div>
     <div class="col-lg-6">
