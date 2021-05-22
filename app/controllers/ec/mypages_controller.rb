@@ -11,9 +11,9 @@ class Ec::MypagesController < ApplicationController
 
 
 
-    orders = Order.where(customer_id: current_customer)
+    orders = Order.where(customer_id: current_customer).includes([:order_details])
     order_detail_array = orders.map(&:order_details)
-    
+
     taste_bitter_total = []
     order_detail_array.each do |order_details|
       order_details.each do |order_detail|
