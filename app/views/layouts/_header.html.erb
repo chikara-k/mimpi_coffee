@@ -15,51 +15,51 @@
           <% if customer_signed_in? %>
             <p style="padding-top: 4px; padding-right: 4px;">ようこそ、<%= current_customer.first_name %>さん</p>
             <li class="nav-item">
-              <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark font-weight-bold fas fa-heart" %>
+              <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark fas fa-coffee" %>
             </li>
             <li class="nav-item">
-              <%= link_to "マイページ", ec_mypage_path(current_customer.id), class: "nav-link text-dark font-weight-bold fas fa-smile" %>
+              <%= link_to "マイページ", ec_mypage_path(current_customer.id), class: "nav-link text-dark fas fa-smile" %>
             </li>
             <li class="nav-item">
-              <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>
+              <%= link_to "カート", ec_cart_items_path, class: "nav-link text-dark fas fa-shopping-cart" %>
             </li>
             <li class="nav-item">
-              <%= link_to "カート", ec_cart_items_path, class: "nav-link text-dark font-weight-bold fas fa-shopping-cart" %>
+              <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark fas fa-heart" %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>
+              <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-dark fas fa-coffee" %>
             </li>
           <% elsif admin_signed_in? %>
             <li class="nav-item">
-              <%= link_to "コーヒー豆", admin_items_path, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>
+              <%= link_to "コーヒー豆", admin_items_path, class: "nav-link text-dark fas fa-coffee" %>
             </li>
             <li class="nav-item">
-              <%= link_to "会員一覧", admin_customers_path, class: "nav-link text-dark font-weight-bold fas fa-users" %>
+              <%= link_to "会員一覧", admin_customers_path, class: "nav-link text-dark fas fa-users" %>
             </li>
             <li class="nav-item">
-              <%= link_to "注文履歴一覧", admin_orders_path, class: "nav-link text-dark font-weight-bold fas fa-clipboard-list" %>
+              <%= link_to "注文履歴一覧", admin_orders_path, class: "nav-link text-dark fas fa-clipboard-list" %>
             </li>
             <li class="nav-item">
-              <%= link_to "ジャンル一覧", admin_genres_path, class: "nav-link text-dark font-weight-bold fas fa-globe-americas" %>
+              <%= link_to "ジャンル一覧", admin_genres_path, class: "nav-link text-dark fas fa-globe-americas" %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-dark font-weight-bold fas fa-sign-out-alt" %>
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-dark fas fa-sign-out-alt" %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark font-weight-bold fas fa-heart" %>
+              <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark fas fa-heart" %>
             </li>
             <li class="nav-item">
-              <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark font-weight-bold fas fa-coffee" %>
+              <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark fas fa-coffee" %>
             </li>
             <li class="nav-item">
-              <%= link_to "新規登録", new_customer_registration_path, class: "nav-link text-dark font-weight-bold fas fa-user-plus" %>
+              <%= link_to "新規登録", new_customer_registration_path, class: "nav-link text-dark fas fa-user-plus" %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログイン", new_customer_session_path, class: "nav-link text-dark font-weight-bold fas fa-sign-in-alt" %>
+              <%= link_to "ログイン", new_customer_session_path, class: "nav-link text-dark fas fa-sign-in-alt" %>
             </li>
             <li class="nav-item">
-              <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "nav-link text-dark font-weight-bold fas fa-sign-in-alt" %>
+              <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "nav-link text-dark fas fa-sign-in-alt" %>
             </li>
           <% end %>
         </ul>
