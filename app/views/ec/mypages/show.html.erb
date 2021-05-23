@@ -3,6 +3,13 @@
   <h4>ようこそ <b><%= @customer.last_name %> <%= @customer.first_name %></b> 様</h4>
   <br>
   <p>このページはお客様のマイページです。</p>
+  <% if current_customer.email == 'guest@example.com' %>
+    <p>
+      ゲストユーザーは、お試し用です。<br>
+      商品の購入※やいいねなど、全ての機能をお試しで使えます。<br>
+      ※実際にお支払い頂くことはありません
+    </p>
+  <% end %>
   <div class="row">
     <%= link_to ec_orders_path, class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
       <div class="row">
@@ -64,11 +71,11 @@
       <script>
         $(document).on("turbolinks:load", function(){
           var ctx = document.getElementById("myRaderChart");
-  
+
           var myRadarChart = new Chart(ctx, {
               type: 'radar',
-  
-  
+
+
               data: {
                 labels: ["苦味", "香り", "酸味", "コク"],
                 datasets: [{
@@ -80,7 +87,7 @@
                     pointBackgroundColor: 'RGB(69,87,172)',
                 }]
               },
-  
+
               options: {
                 responsive: true,
                 scale:{
