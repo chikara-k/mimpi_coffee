@@ -3,10 +3,9 @@ class Ec::CartItemsController < ApplicationController
 
   def index
     @cart_items = current_customer.cart_items
-    @tax = 1.1
     @item_total = 0
     @cart_items.each do |cart_item|
-      @item_total += cart_item.item.price * cart_item.amount
+      @item_total += cart_item.item.price_tax_included * cart_item.amount
     end
   end
 

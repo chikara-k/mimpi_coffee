@@ -24,13 +24,13 @@
               </div>
             </td>
             <td class="text-center" style="padding-top: 45px;">
-              <%= (cart_item.item.price * 1.1).to_i %>円
+              <%= (cart_item.item.price_tax_included).to_i %>円
             </td>
             <td class="text-center" style="padding-top: 45px;">
               <%= cart_item.amount %>
             </td>
             <td class="text-center" style="padding-top: 45px;">
-              <% @subtotal = (cart_item.item.price * 1.1 * cart_item.amount).to_i %>
+              <% @subtotal = (cart_item.item.price_tax_included * cart_item.amount).to_i %>
               <%= @subtotal %>円
             </td>
           </tr>

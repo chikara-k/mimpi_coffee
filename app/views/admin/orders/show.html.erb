@@ -50,11 +50,10 @@
           </tr>
         </thead>
         <% @order.order_details.each do |order_detail| %>
-          <% tax = 1.1 %>
-          <% subtotal = (order_detail.item.price * tax * order_detail.amount).to_i.to_s(:delimited, delimiter: ',') %>
+          <% subtotal = (order_detail.item.price_tax_included * order_detail.amount).to_i.to_s(:delimited, delimiter: ',') %>
         <tbody>
           <td><%= order_detail.item.name%></td>
-          <td><%= (order_detail.item.price * tax).to_i.to_s(:delimited, delimiter: ',') %></td>
+          <td><%= (order_detail.item.price_tax_included).to_i.to_s(:delimited, delimiter: ',') %></td>
           <td><%= order_detail.amount%></td>
           <td><%= subtotal %></td>
         </tbody>

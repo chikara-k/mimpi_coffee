@@ -11,7 +11,7 @@ class Ec::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @item_total = 0
     @cart_items.each do |cart_item|
-      @item_total += (cart_item.item.price * cart_item.amount * 1.1).to_i
+      @item_total += (cart_item.item.price_tax_included * cart_item.amount).to_i
     end
 
     @order = Order.new
@@ -36,7 +36,7 @@ class Ec::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @item_total = 0
     @cart_items.each do |cart_item|
-      @item_total += (cart_item.item.price * cart_item.amount * 1.1).to_i
+      @item_total += (cart_item.item.price_tax_included * cart_item.amount).to_i
     end
 
     @order = Order.new(order_params)
@@ -52,8 +52,8 @@ class Ec::OrdersController < ApplicationController
           item_id: cart_item.item.id,
           order_id: @order.id,
           amount: cart_item.amount,
-          price: (cart_item.item.price * 1.1).to_i,
-          subtotal: ((cart_item.item.price.to_i * cart_item.amount) * 1.1).to_i
+          price: (cart_item.item.price_tax_included).to_i,
+          subtotal: (cart_item.item.price_tax_included.to_i * cart_item.amount).to_i
         )
         order_item.save
         cart_item.destroy
