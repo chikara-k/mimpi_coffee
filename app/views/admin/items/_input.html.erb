@@ -11,6 +11,10 @@
   <tr class="d-flex">
     <th class="col-4"><%= f.label :"苦味" %></th>
     <td class="col-2">
+      <%= f.radio_button :taste_bitter, 0 %>
+      <%= f.label :taste_bitter, "0" %>
+    </td>
+    <td class="col-2">
       <%= f.radio_button :taste_bitter, 1 %>
       <%= f.label :taste_bitter, "1" %>
     </td>
@@ -33,6 +37,10 @@
   </tr>
   <tr class="d-flex">
     <th class="col-4"><%= f.label :"酸味" %></th>
+    <td class="col-2">
+      <%= f.radio_button :taste_sour, 0 %>
+      <%= f.label :taste_sour, "0" %>
+    </td>
     <td class="col-2">
       <%= f.radio_button :taste_sour, 1 %>
       <%= f.label :taste_sour, "1" %>
@@ -57,6 +65,10 @@
   <tr class="d-flex">
     <th class="col-4"><%= f.label :"香り" %></th>
     <td class="col-2">
+      <%= f.radio_button :taste_aroma, 0 %>
+      <%= f.label :taste_aroma, "0" %>
+    </td>
+    <td class="col-2">
       <%= f.radio_button :taste_aroma, 1 %>
       <%= f.label :taste_aroma, "1" %>
     </td>
@@ -79,6 +91,10 @@
   </tr>
   <tr class="d-flex">
     <th class="col-4"><%= f.label :"コク" %></th>
+    <td class="col-2">
+      <%= f.radio_button :taste_body, 0 %>
+      <%= f.label :taste_body, "0" %>
+    </td>
     <td class="col-2">
       <%= f.radio_button :taste_body, 1 %>
       <%= f.label :taste_body, "1" %>
