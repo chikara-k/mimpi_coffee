@@ -1,5 +1,5 @@
-<div class="container">
-  <p style="padding-bottom: 120px;"></p>
+<div class="container mt-5">
+  <p><%= link_to "← 一覧へ戻る", ec_items_path, class: "text-dark" %></p>
   <div class="row">
     <div class="col-lg-4">
       <%= attachment_image_tag @item, :image, class: "img-responsive" %>
@@ -100,7 +100,7 @@
           <% if customer_signed_in? %>
             <%= f.submit "カートに入れる", class: "btn btn-outline-light", style: "background-color: #daa965;" %>
           <% else %>
-            <%= link_to "購入にはログインが必要です", new_customer_session_path, class: "btn btn-outline-light mb-2", style: "background-color: #daa965;" %>
+            <%= link_to "購入にはログインが必要です", new_customer_session_path, class: "btn btn-outline-light m", style: "background-color: #daa965;" %>
           <% end %>
         </div>
       </div>

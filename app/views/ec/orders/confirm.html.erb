@@ -76,20 +76,22 @@
           <tr class="border-top">
             <td><b>お支払い金額合計</b></td><td class="text-right"><b><%= @item_total + 800 %>円</b></td>
           </tr>
-          <tr>
-            <td></td>
-            <td>
-              <%= form_with model: @order, url: ec_orders_path do |f| %>
-                <%= f.hidden_field :name %>
-                <%= f.hidden_field :address %>
-                <%= f.hidden_field :postal_code %>
-                <%= f.hidden_field :payment_method %>
-                <%=f.submit "注文を確定する", class: "btn btn-outline-light btn-block", style: "background-color: #daa965;" %>
-              <% end %>
-            </td>
-          </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= link_to "← 前のページに戻る", new_ec_order_path, class: "text-dark" %>
+    </div>
+    <div class="col-lg-6 text-right mb-3">
+      <%= form_with model: @order, url: ec_orders_path do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :address %>
+        <%= f.hidden_field :postal_code %>
+        <%= f.hidden_field :payment_method %>
+        <%=f.submit "注文を確定する", class: "btn btn-outline-light", style: "background-color: #daa965;" %>
+      <% end %>
     </div>
   </div>
 </div>

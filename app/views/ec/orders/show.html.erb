@@ -71,7 +71,7 @@
         <% @order.order_details.each do |order_detail| %>
           <% subtotal = (order_detail.item.price_tax_included * order_detail.amount).to_i.to_s(:delimited, delimiter: ',') %>
         <tbody>
-          <td><%= order_detail.item.name%></td>
+          <td><%= link_to order_detail.item.name, ec_item_path(order_detail.item) %></td>
           <td><%= (order_detail.item.price_tax_included).to_i.to_s(:delimited, delimiter: ',') %></td>
           <td><%= order_detail.amount%></td>
           <td><%= subtotal %></td>

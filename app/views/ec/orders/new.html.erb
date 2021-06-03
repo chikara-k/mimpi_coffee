@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-1"></div>
+    <div class="col-lg-2"></div>
     <div class="col-lg-5">
       <h5>＜お支払い方法＞</h5>
 			<br>
@@ -47,6 +47,7 @@
 			<%= f.label :payment_method, "銀行振り込み" %>
 			<br>
 			<%= f.submit "確認画面へ進む", class: "btn btn-outline-light mt-4 mb-5", style: "background-color: #daa965;" %>
+			<p><%= link_to "← 前のページに戻る", ec_cart_items_path, class: "text-dark" %></p>
     </div>
   </div>
   <% end %>
