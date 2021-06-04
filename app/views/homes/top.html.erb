@@ -9,27 +9,25 @@
     </div>
   </div>
 </div>
-<!--<p style="height:30px;"></p>-->
-<!--<div class="container">-->
-<!--  <h2 class="pb-3">コーヒーの購入方法</h2>-->
-<!--  <div class="row">-->
-<!--    <div class="col-lg-3" style="padding-left: 40px;">-->
-<!--      <%#= image_tag("img/coffee.png", :size => '240x300') %>-->
-<!--    </div>-->
-<!--    <div class="col-lg-1" style="padding-left: 50px;">-->
-<!--      <p style="height:120px;"></p>-->
-<!--      <h1>→</h1>-->
-<!--    </div>-->
-<!--    <div class="col-lg-3" style="padding-left: 40px;">-->
-<!--      <%#= image_tag("img/coffee.png", :size => '240x300') %>-->
-<!--    </div>-->
-<!--    <div class="col-lg-1" style="padding-left: 50px;">-->
-<!--      <p style="height:120px;"></p>-->
-<!--      <h1>→</h1>-->
-<!--    </div>-->
-<!--    <div class="col-lg-3" style="padding-left: 40px;">-->
-<!--      <%#= image_tag("img/coffee.png", :size => '240x300') %>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--<p style="height:130px;"></p>-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12 text-center ranking">
+      <h3>FAVORITE RANKING</h3>
+      <p>〜 いいねランキング 〜</p>
+    </div>
+  </div>
+  <div class="row">
+    <% @items.each.with_index(1) do |item, i| %>
+      <div class="co-lg-3 m-4">
+        <p class="text-center ranking">第 <%= i %> 位</p>
+        <%= link_to ec_item_path(item) do %>
+          <%= attachment_image_tag item, :image, :size => "230x230" %>
+        <% end %>
+        <div class="text-right mt-1 ranking">
+          <b><%= item.name %></b><br>
+          <%= item.price.to_s(:delimited) %>円
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

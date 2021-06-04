@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many :order_details
   has_many :favorites, dependent: :destroy
+  has_many :favorited_customers, through: :favorites, source: :customer
   belongs_to :genre
 
   attachment :image

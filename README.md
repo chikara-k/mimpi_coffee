@@ -22,19 +22,27 @@
 - 会員登録することにより、過去に買ったコーヒーの履歴を確認することができます。
 - 購入履歴から得られたデータより自分の好みの味を知ることができます。
 
-## 機能一覧・設計図
+## 機能一覧
 
-### 機能一覧
-https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0
+### 主要な機能
+ 1.ユーザー認証
+ 2.管理者機能(ユーザー管理・商品管理・注文管理)
+ 3.ユーザーマイページ(購入履歴・配送先・登録情報)
+ 4.商品一覧・詳細機能
+ 5.いいね機能(非同期通信)
+ 6.ランキング機能
+ 7.好みのグラフ化
+ 8.お問合せ機能
+ 9.産地検索機能(GoogleMapAPI使用)
+ 10.RSpec
+ [機能詳細](https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0)
 
-### ER図
-https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing
-
-### テーブル定義書
-https://docs.google.com/spreadsheets/d/1pejckANbwZZGfgga_1cYTebJdFUQUvgd1xTOD9PQEcs/edit?usp=sharing
-
-### 詳細設計書
-https://drive.google.com/file/d/1d1iHwrQb43sJXII_D6hCGHzmM_PNdMO5/view?usp=sharing
+### 設計書
+・[ER図](https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing)
+<br>
+・[テーブル定義書](https://docs.google.com/spreadsheets/d/1pejckANbwZZGfgga_1cYTebJdFUQUvgd1xTOD9PQEcs/edit?usp=sharing)
+<br>
+・[詳細設計書](https://drive.google.com/file/d/1d1iHwrQb43sJXII_D6hCGHzmM_PNdMO5/view?usp=sharing)
 
 ## 環境・使用技術
 ### 開発環境
@@ -57,4 +65,4 @@ https://drive.google.com/file/d/1d1iHwrQb43sJXII_D6hCGHzmM_PNdMO5/view?usp=shari
 
 ### テスト
 - RSpec
-- GithubActions(CI/CD)
+- GitHubActions(CI/CD)
