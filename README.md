@@ -35,14 +35,14 @@
  8. お問合せ機能
  9. 産地検索機能(GoogleMapAPI使用)
  10. RSpec
- <br>
+
  - [機能詳細](https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0)
 
 ### 設計書
  - [ER図](https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing)
-<br>
+
  - [テーブル定義書](https://docs.google.com/spreadsheets/d/1pejckANbwZZGfgga_1cYTebJdFUQUvgd1xTOD9PQEcs/edit?usp=sharing)
-<br>
+
  - [詳細設計書](https://drive.google.com/file/d/1d1iHwrQb43sJXII_D6hCGHzmM_PNdMO5/view?usp=sharing)
 
 ## 環境・使用技術
