@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container font-mincho">
   <h3 style="padding: 20px 0;">配送先登録/一覧</h3>
   <div id="error_explanation">
     <%= render 'layouts/error', model: @address %>
@@ -40,7 +40,7 @@
         <tbody>
           <tr>
             <td class="text-center">
-              <%= link_to "✖", ec_address_path(address), method: :delete %>
+              <%= link_to "✖", ec_address_path(address), method: :delete, :style => "color:black;" %>
             </td>
             <td class="text-center">
               <%= address.name %>

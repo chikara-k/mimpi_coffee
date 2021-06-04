@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container font-mincho">
   <h4 style="padding: 20px 0;">マイページ</h4>
   <h4>ようこそ <b><%= @customer.last_name %> <%= @customer.first_name %></b> 様</h4>
   <br>
@@ -93,7 +93,8 @@
                 scale:{
                   pointLabels:{
                     fontSize: 20,
-                    fontColor:"black"
+                    fontColor: "black",
+                    fontFamily: "YuMincho"
                   },
                   ticks:{
                       suggestedMin: 0,
