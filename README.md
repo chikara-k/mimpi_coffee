@@ -1,7 +1,7 @@
-# MimpiCoffee
+# [MimpiCoffee](https://mimpi.shop)
 
 ## サイト概要
-[夢珈琲みんぴ](https://mimpi.shop)<br>
+[夢珈琲みんぴ](https://mimpi.shop)（ゲストログインできます）<br>
 宮崎県で２０年以上続く、自家焙煎珈琲専門店のECサイトです。<br>
 この珈琲屋さんは、家族で営まれており、アットホームな雰囲気と、<br>
 こだわりの自家焙煎コーヒーは地元の方から愛されています。<br>
