@@ -63,6 +63,7 @@ class Admin::ItemsController < ApplicationController
                                  :taste_aroma,
                                  :taste_body,
                                  :roasting_level,
+                                 :country,
                                  :introduction,
                                  :price,
                                  :is_sales)
