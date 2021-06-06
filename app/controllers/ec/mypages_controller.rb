@@ -44,6 +44,5 @@ class Ec::MypagesController < ApplicationController
       end
     end
     @taste_body_average = taste_body_total.sum / taste_body_total.length.to_f
-    
   end
 end

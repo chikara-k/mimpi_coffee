@@ -109,20 +109,19 @@
 
     <!--map-->
     <div class="col-lg-3">
-      <p>生産国を地図上で確認できます。</p>
+      <p>生産国</p>
       <div class="row">
         <div class="col-lg-12 mb-3">
           <%= form_with url: ec_item_map_request_path(@item), method: :get do |f|%>
-          <div class="row">
-            <div class="col-lg-8">
-              <%= f.text_field :map_address %>
+            <div class="row">
+              <div class="col-lg-8">
+                <%= f.text_field :map_address, value: @item.country %>
+              </div>
+              <div class="col-lg-4">
+                <%= f.submit id: "country", value: "地図表示" %>
+              </div>
             </div>
-            <div class="col-lg-4">
-              <%= f.submit '地図表示' %>
-            </div>
-          </div>
           <% end %>
-
         </div>
       </div>
       <div class="row gmap_wrapper" style="height: 300px;">
@@ -145,6 +144,10 @@
             zoom: 2,
             });
           }
+
+          $(document).on("turbolinks:load", function() {
+            document.getElementById("country").click();
+          });
         </script>
 
         <script

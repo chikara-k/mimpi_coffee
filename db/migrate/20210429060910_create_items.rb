@@ -9,6 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :taste_aroma
       t.integer :taste_body
       t.integer :roasting_level
+      t.text :country
       t.text :introduction
       t.integer :price, null: false
       t.boolean :is_sales, default: "true"

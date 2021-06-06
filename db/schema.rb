@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_105544) do
     t.integer "taste_aroma"
     t.integer "taste_body"
     t.integer "roasting_level"
+    t.text "country"
     t.text "introduction"
     t.integer "price", null: false
     t.boolean "is_sales", default: true
