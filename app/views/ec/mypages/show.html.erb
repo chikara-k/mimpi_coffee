@@ -69,7 +69,7 @@
     　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
       <script>
-        $(document).on("turbolinks:load", function(){
+        $(document).on("turbolinks:load turbolinks:render", function(){
           var ctx = document.getElementById("myRaderChart");
 
           var myRadarChart = new Chart(ctx, {
