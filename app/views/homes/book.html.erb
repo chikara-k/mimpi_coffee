@@ -1,0 +1,155 @@
+<div class="container font-mincho">
+  <h1 class="m-5">〜 コーヒー図鑑 〜</h1>
+  <div class="row">
+    <div class="col-md-4 roast_level ml-4 mt-4"></div>
+    <div class="col-md-7 mb-4">
+      <h3>コーヒーの「焙煎度」</h3>
+      <p>
+        コーヒーには細かく分けると８段階、大きく分けると３段階の焙煎度合いがあり、<br>
+        好みもありますが、生豆(元となる生の豆)の種類によって使い分けます。<br>
+        それぞれの特徴を知っておくと、さらに楽しくコーヒーを選べますよ♪
+        <ol>
+          <li>ライトロースト (浅煎り)</li>
+          <li>シナモンロースト (浅煎り)</li>
+          <br>
+          <li>ミディアムロースト (中煎り)</li>
+          <li>ハイロースト (中煎り)</li>
+          <br>
+          <li>シティロースト (深煎り)</li>
+          <li>フルシティロースト (深煎り)</li>
+          <li>フレンチロースト (深煎り)</li>
+          <li>イタリアンロースト (深煎り)</li>
+        </ol>
+        大きく分けた３段階(浅煎り・中煎り・深煎り)で味の違いを知っておきましょう。
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h2 class="text-right marker">浅煎り</h2>
+      <div class="light_graph"></div>
+    </div>
+    <div class="col-md-6">
+      <div class="light_roast"></div>
+      <p><b>Feature</b></p>
+      <p>
+        コーヒー特有の苦味やコクなどはほとんど感じられませんが、
+        アーモンドのような甘い香りや、強い酸味を感じられるコーヒーが楽しめます。<br>
+        ちょっと気分を変えたい時におすすめの焙煎度になります。
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <div class="medium_roast"></div>
+      <p><b>Feature</b></p>
+      <p>
+        苦味も少し出てきて、浅煎りよりも柔らかい酸味になります。<br>
+        生豆の状態や生産国によっては、この焙煎が適している場合もあり、<br>
+        主に香りや酸味を重視した焙煎度合いになります。<br>
+        苦いのが苦手な方におすすめです。
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2 class="text-left marker">中煎り</h2>
+      <div class="medium_graph"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h2 class="text-right marker">深煎り</h2>
+      <div class="city_graph"></div>
+    </div>
+    <div class="col-md-6">
+      <div class="city_roast"></div>
+      <p><b>Feature</b></p>
+      <p>
+        苦味、酸味、香り、コクそれぞれのバランスが良く、もっとも汎用的な<br>
+        焙煎度合いになります。<br>
+        生豆によって味は変わりますので、
+        まずはこの焙煎度のコーヒーで自分のお好みを探してみるのをおすすめします。
+      </p>
+    </div>
+  </div>
+  <hr>
+
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>「生産国」による違い</h3>
+      <p>
+        コーヒーは、生産国の天候や作り手の意識によって味に影響が出ます。<br>
+        それぞれの国や農園の違いを知っていれば、あなたもコーヒーマニア間違いなし♪<br>
+        まずは似通った味が集まる、大陸ごとの特徴を知っておくとさらに好みのコーヒーを選びやすくなります。
+      <div class="coffee_belt"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h4 class="text-right marker">アジア・オセアニア</h4>
+      <div class="asia_graph"></div>
+      <div class="text-center mt-4">
+        <%= link_to "アジア・オセアニアの商品", ec_items_path(anchor: 'asia'), class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="asia"></div>
+      <p><b>Feature</b></p>
+      <p>
+        まろやかな苦味やコクが特徴的なコーヒーが多く、
+        ゆっくりしたいときや、大人な気分を味わい時にぴったりです♫<br>
+        伝統のある生産地から、近年生産を始めた国まで様々で、今後も楽しみな地域です。
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <div class="africa"></div>
+      <p><b>Feature</b></p>
+      <p>
+        コーヒー発祥の地と言われるアフリカのコーヒーは、独特の香りやコクが特徴的で、
+        個性的なコーヒーがたくさんあります。
+        コーヒー楽しむなら一度は飲んでみて欲しい地域です。
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 class="text-left marker">アフリカ・中東</h4>
+      <div class="africa_graph"></div>
+      <div class="text-center mt-4">
+        <%= link_to "アフリカ・中東の商品", ec_items_path(anchor: 'africa'), class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h4 class="text-right marker">中南米・カリブ海</h4>
+      <div class="america_graph"></div>
+      <div class="text-center mt-4">
+        <%= link_to "中南米・カリブ海の商品", ec_items_path(anchor: 'america'), class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="america"></div>
+      <p><b>Feature</b></p>
+      <p>
+        この地域のコーヒーは何と言っても香りがとても豊かで、そのバリエーションも豊富です。<br>
+        さっぱりしたい気分の時にぴったりのコーヒーが多く、苦味が苦手な方にもおすすめです。
+      </p>
+    </div>
+  </div>
+  <hr>
+</div>

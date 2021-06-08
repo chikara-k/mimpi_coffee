@@ -15,13 +15,16 @@
           <% if customer_signed_in? %>
             <p style="padding-top: 4px; padding-right: 4px;">ようこそ、<%= current_customer.first_name %>さん</p>
             <li class="nav-item">
-              <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark fas fa-coffee" %>
+              <%= link_to "商品一覧", ec_items_path, class: "nav-link text-dark fas fa-coffee" %>
             </li>
             <li class="nav-item">
               <%= link_to "マイページ", ec_mypage_path(current_customer.id), class: "nav-link text-dark fas fa-smile" %>
             </li>
             <li class="nav-item">
               <%= link_to "カート", ec_cart_items_path, class: "nav-link text-dark fas fa-shopping-cart" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "コーヒー図鑑", book_path, class: "nav-link text-dark fas fa-book" %>
             </li>
             <li class="nav-item">
               <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark fas fa-heart" %>
@@ -31,7 +34,7 @@
             </li>
           <% elsif admin_signed_in? %>
             <li class="nav-item">
-              <%= link_to "コーヒー豆", admin_items_path, class: "nav-link text-dark fas fa-coffee" %>
+              <%= link_to "商品一覧", admin_items_path, class: "nav-link text-dark fas fa-coffee" %>
             </li>
             <li class="nav-item">
               <%= link_to "会員一覧", admin_customers_path, class: "nav-link text-dark fas fa-users" %>
@@ -50,7 +53,10 @@
               <%= link_to "みんぴを知る", about_path, class: "nav-link text-dark fas fa-heart" %>
             </li>
             <li class="nav-item">
-              <%= link_to "コーヒー豆", ec_items_path, class: "nav-link text-dark fas fa-coffee" %>
+              <%= link_to "コーヒー図鑑", book_path, class: "nav-link text-dark fas fa-book" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "商品一覧", ec_items_path, class: "nav-link text-dark fas fa-coffee" %>
             </li>
             <li class="nav-item">
               <%= link_to "新規登録", new_customer_registration_path, class: "nav-link text-dark fas fa-user-plus" %>

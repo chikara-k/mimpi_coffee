@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get '/about' => 'homes#about'
+  get '/book' => 'homes#book'
   # お問い合わせ
   resources :contacts, only: [:new, :create]
   post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'

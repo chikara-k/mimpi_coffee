@@ -67,3 +67,6 @@
 ### テスト
 - RSpec
 - GitHubActions(CI/CD)
+
+## 使用素材
+illustAC https://www.ac-illust.com/

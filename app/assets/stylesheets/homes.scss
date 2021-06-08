@@ -6,9 +6,8 @@
   width: 100%;
   height: 700px;
   background-image:image_url("coffee.png");
-  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
-  background-position: center; /* 背景画像を中央に配置 */
-  // opacity: 0.2;
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -30,9 +29,8 @@
   width: 100%;
   height: 700px;
   background-image:image-url("about_top.png");
-  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
-  background-position: center; /* 背景画像を中央に配置 */
-  // opacity: 0.2;
+  background-size: cover;
+  background-position: center;
 }
 
 .about-visual-text {
@@ -41,8 +39,8 @@
   text-align: left;
   color: white;
   font-family :
-  YuMincho,    /* Mac用 */
-	'Yu Mincho', /* Windows用 */
+  YuMincho,
+	'Yu Mincho',
 	serif;
 	background-color: rgba(0, 0, 0, 0.5);
 	padding: 30px;
@@ -52,7 +50,134 @@
   width: 100%;
   height: 630px;
   background-image:image_url("about_top2.png");
-  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
-  background-position: center; /* 背景画像を中央に配置 */
-  // opacity: 0.2;
+  background-size: cover;
+  background-position: center;
+}
+
+.roast_level {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("roast_level3.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.light_roast {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("light_roast.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.light_graph {
+  width: 100%;
+  height: 300px;
+  background-image:image_url("light_graph.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.medium_roast {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("medium_roast.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.medium_graph {
+  width: 100%;
+  height: 300px;
+  background-image:image_url("medium_graph.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.city_roast {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("city_roast.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.city_graph {
+  width: 100%;
+  height: 300px;
+  background-image:image_url("city_graph.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.marker {
+  background: linear-gradient(transparent 60%, rgba(221,221,110,0.6) 80%);
+}
+
+.coffee_belt {
+  width: 100%;
+  height: 500px;
+  background-image:image_url("coffee_belt.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.asia {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("asia.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.asia_graph {
+  width: 100%;
+  height: 300px;
+  background-image:image_url("asia_graph.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+.africa {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("africa.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.africa_graph {
+  width: 100%;
+  height: 300px;
+  background-image:image_url("africa_graph.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+.america {
+  width: 100%;
+  height: 400px;
+  background-image:image_url("america.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.america_graph {
+  width: 100%;
+  height: 300px;
+  background-image:image_url("america_graph.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat
 }

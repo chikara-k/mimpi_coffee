@@ -8,4 +8,7 @@ class HomesController < ApplicationController
 
   def about
   end
+
+  def book
+  end
 end
