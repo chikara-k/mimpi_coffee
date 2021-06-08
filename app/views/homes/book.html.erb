@@ -30,6 +30,9 @@
     <div class="col-md-4">
       <h2 class="text-right marker">浅煎り</h2>
       <div class="light_graph"></div>
+      <div class="text-center mt-4">
+        <%= link_to "浅煎りの商品", ec_roast_path(anchor: 'light_roast'), class: "btn btn-outline-secondary" %>
+      </div>
     </div>
     <div class="col-md-6">
       <div class="light_roast"></div>
@@ -57,6 +60,9 @@
     <div class="col-md-4">
       <h2 class="text-left marker">中煎り</h2>
       <div class="medium_graph"></div>
+      <div class="text-center mt-4">
+        <%= link_to "中煎りの商品", ec_roast_path(anchor: 'medium_roast'), class: "btn btn-outline-secondary" %>
+      </div>
     </div>
   </div>
   <hr>
@@ -65,6 +71,9 @@
     <div class="col-md-4">
       <h2 class="text-right marker">深煎り</h2>
       <div class="city_graph"></div>
+      <div class="text-center mt-4">
+        <%= link_to "深煎りの商品", ec_roast_path(anchor: 'city_roast'), class: "btn btn-outline-secondary" %>
+      </div>
     </div>
     <div class="col-md-6">
       <div class="city_roast"></div>

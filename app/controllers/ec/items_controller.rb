@@ -12,6 +12,12 @@ class Ec::ItemsController < ApplicationController
     @cart_item = CartItem.new
   end
 
+  def roast
+    @light_roast = Item.where(roasting_level: 2, is_sales: true)
+    @medium_roast = Item.where(roasting_level: 1, is_sales: true)
+    @city_roast = Item.where(roasting_level: 0, is_sales: true)
+  end
+
   def map
     results = Geocoder.search(params[:map_address])
     @latlng = results.first.coordinates

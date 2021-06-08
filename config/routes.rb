@@ -39,14 +39,12 @@ Rails.application.routes.draw do
   post 'contacts/back', to: 'contacts#back', as: 'back'
   get 'done', to: 'contacts#done', as: 'done'
 
-  namespace :customers do
-  end
-
   namespace :ec do
     resources :items, only: [:index, :show] do
       resource :favorites, only: [:create, :destroy]
       get 'map_request', to: 'items#map', as: 'map_request'
     end
+    get '/roast' => 'items#roast'
 
     resources :cart_items, only: [:index, :create, :update, :destroy]
 

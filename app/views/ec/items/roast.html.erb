@@ -1,0 +1,28 @@
+<div class="container font-mincho">
+  <div class="pt-4">
+    <%= link_to "← 地域別で見る", ec_items_path, class: "text-dark" %>
+  </div>
+  <div class="row" id="light_roast">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">浅煎りのコーヒー</h3>
+      <hr>
+    </div>
+  </div>
+  <%= render 'ec/items/list', item: @light_roast %>
+
+  <div class="row" id="medium_roast">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">中煎りのコーヒー</h3>
+      <hr>
+    </div>
+  </div>
+  <%= render 'ec/items/list', item: @medium_roast %>
+
+  <div class="row" id="city_roast">
+    <div class="col-lg-12">
+      <h3 style="padding-top: 20px;">深煎りのコーヒー</h3>
+      <hr>
+    </div>
+  </div>
+  <%= render 'ec/items/list', item: @city_roast %>
+</div>
