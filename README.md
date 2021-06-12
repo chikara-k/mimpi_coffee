@@ -60,7 +60,7 @@
 - Rails 5.2.5
 
 ### 本番環境
-- AWS(EC2、 RDS for MySQL、Route53)
+- AWS(EC2、 RDS for MySQL、Route53、S3)
 - MySQL 5.7.22
 - Nginx、 Puma
 
