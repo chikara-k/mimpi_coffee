@@ -7,8 +7,8 @@ class Ec::MypagesController < ApplicationController
     else
       redirect_to customers_sign_in_path
     end
-    
-    @items = Item.last(4)
+
+    @items = Item.where(is_sales: true).last(4)
 
     orders = Order.where(customer_id: current_customer).includes([:order_details])
     order_detail_array = orders.map(&:order_details)
