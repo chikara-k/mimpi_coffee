@@ -2,6 +2,7 @@
 
 ## サイト概要
 <img width="1078" alt="mimpi_summarize" src="https://user-images.githubusercontent.com/75741350/121880795-64a87380-cd49-11eb-8f1e-e8931f7b71bb.png">
+
 [夢珈琲みんぴ](https://mimpi.shop)（ゲストログインできます）<br>
 宮崎県で２０年以上続く、自家焙煎珈琲専門店のECサイトです。<br>
 この珈琲屋さんは、家族で営まれており、アットホームな雰囲気と、<br>
