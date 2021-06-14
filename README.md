@@ -38,7 +38,11 @@
 
  - [機能詳細](https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0)
 
-### 設計書
+### 設計書・インフラ構成図
+<img class="infrastructure"
+     src="infrastructure.png"
+     alt="infrastructures">
+
  - [ER図](https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing) (draw.io)
 
  - [テーブル定義書](https://docs.google.com/spreadsheets/d/1pejckANbwZZGfgga_1cYTebJdFUQUvgd1xTOD9PQEcs/edit?usp=sharing) (スプレッドシート)
@@ -53,16 +57,16 @@
 
 ### フロントエンド
 - Bootstrap 4.5
-- JavaScript、jQuery、Ajax
+- JavaScript, jQuery, Ajax
 
 ### バックエンド
 - Ruby 2.6.3
 - Rails 5.2.5
 
 ### 本番環境
-- AWS(EC2、 RDS for MySQL、Route53、S3)
+- AWS(EC2, RDS for MySQL, S3, Route53, ACM, ALB)
 - MySQL 5.7.22
-- Nginx、 Puma
+- Nginx, Puma
 
 ### テスト
 - RSpec
