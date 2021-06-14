@@ -39,9 +39,7 @@
  - [機能詳細](https://docs.google.com/spreadsheets/d/1MsZHteQ1m3APSkF2Fw6SFmiIpsnbwX7TT-gfkwR2mKM/edit#gid=0)
 
 ### 設計書・インフラ構成図
-<img class="infrastructure"
-     src="infrastructure.png"
-     alt="infrastructures">
+<img width="950" alt="インフラ構成図" src="https://user-images.githubusercontent.com/75741350/121875212-2ad46e80-cd43-11eb-9ad5-95391b3b7997.png">
 
  - [ER図](https://drive.google.com/file/d/1I-IrL59sUQhD4FQHPjH2gTNft5ktt1wa/view?usp=sharing) (draw.io)
 
