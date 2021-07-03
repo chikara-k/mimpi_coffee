@@ -27,6 +27,8 @@ class Ec::MypagesController < ApplicationController
         taste_sour_total << order_detail.item.taste_sour
       end
     end
+    p 1
+    p taste_sour_total
     @taste_sour_average = taste_sour_total.sum / taste_sour_total.length.to_f
 
     taste_aroma_total = []
