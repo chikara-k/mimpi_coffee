@@ -85,7 +85,12 @@
           </div>
           <div class="col-lg-6">
             <p>¥ <%= item.price.to_s(:delimited) %></p>
-            <p class="text-danger">♡<%= item.favorites.count %></p>
+            <!--<p class="text-danger">♡<%#= item.favorites.count %></p>-->
+            <% if item.favorited_by?(current_customer) %>
+             <p class="text-danger">♥<%= item.favorites.count %></p>
+            <% else %>
+              <p class="text-danger">♡<%= item.favorites.count %></p>
+            <% end %>
           </div>
         </div>
         <div class="row">
