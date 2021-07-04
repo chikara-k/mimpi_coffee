@@ -214,6 +214,7 @@ Item.create!(
     name: "インドモンスーン マラバール",
     image: File.open('./app/assets/images/img/asia3.png'),
     taste_bitter: 3,
+    taste_sour: 0,
     taste_aroma: 4,
     taste_body: 2,
     roasting_level: "中煎り",

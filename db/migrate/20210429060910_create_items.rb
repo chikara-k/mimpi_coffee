@@ -4,10 +4,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :genre_id, default: "5"
       t.string :name, null: false
       t.string :image_id, null: false
-      t.integer :taste_bitter
-      t.integer :taste_sour
-      t.integer :taste_aroma
-      t.integer :taste_body
+      t.integer :taste_bitter, default: 0
+      t.integer :taste_sour, default: 0
+      t.integer :taste_aroma, default: 0
+      t.integer :taste_body, default: 0
       t.integer :roasting_level
       t.text :country
       t.text :introduction
