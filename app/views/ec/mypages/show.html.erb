@@ -10,15 +10,16 @@
       (＊ 実際にお支払い頂くことはありませんのでご安心ください。)
     </p>
   <% end %>
-  <div class="row">
-    <%= link_to ec_orders_path, class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
+  <div class="row mt-4 mb-4">
+    <div class="col-md-1"></div>
+    <%= link_to ec_orders_path, class: "col-md-3 border mr-5", style: "padding: 30px 20px; background-color: #f1f1f1;" do %>
       <div class="row">
-        <div class="col-lg-12">
-          <h5 class="fas fa-shopping-cart text-dark"> 購入履歴　→</h5>
+        <div class="col-md-12">
+          <h5 class="fas fa-shopping-cart text-dark"> 購入履歴→</h5>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12 mt-3">
+        <div class="col-md-12 mt-3">
           <ul>
             <li class="text-dark">ご注文した商品の一覧</li>
             <li class="text-dark">ご注文の詳細確認</li>
@@ -26,14 +27,14 @@
         </div>
       </div>
     <% end %>
-    <%= link_to ec_addresses_path, class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
+    <%= link_to ec_addresses_path, class: "col-md-3 border mr-5", style: "padding: 30px 20px; background-color: #f1f1f1;" do %>
       <div class="row">
-        <div class="col-lg-12">
-          <h5 class="fas fa-truck text-dark"> 配送先リスト　→</h5>
+        <div class="col-md-12">
+          <h5 class="fas fa-truck text-dark"> 配送先→</h5>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12 mt-3">
+        <div class="col-md-12 mt-3">
           <ul>
             <li class="text-dark">新規配送先の追加</li>
             <li class="text-dark">登録済み配送先の変更</li>
@@ -41,14 +42,14 @@
         </div>
       </div>
     <% end %>
-    <%= link_to ec_customer_path(current_customer), class: "col-lg-3 border", style: "padding: 30px 20px; margin: 30px 40px; background-color: #f1f1f1;" do %>
+    <%= link_to ec_customer_path(current_customer), class: "col-md-3 border", style: "padding: 30px 20px; background-color: #f1f1f1;" do %>
       <div class="row">
-        <div class="col-lg-12">
-          <h5 class="fas fa-user text-dark"> 会員情報　→</h5>
+        <div class="col-md-12">
+          <h5 class="fas fa-user text-dark"> 会員情報→</h5>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12 mt-3">
+        <div class="col-md-12 mt-3">
           <ul>
             <li class="text-dark">会員情報の確認、変更</li>
             <li class="text-dark">退会</li>
@@ -61,7 +62,7 @@
 
   <div class="row">
     <!--グラフ-->
-    <div class="col-lg-5">
+    <div class="col-md-5">
       <h2 style="padding: 20px 0;">お好みの傾向</h2>
       <canvas id="myRaderChart" width="30" height="30"></canvas>
       <p class="mt-4">※購入履歴から得られたデータです。</p>
@@ -107,14 +108,14 @@
         });
       </script>
     </div>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-6">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
       <h2 style="padding: 20px 0;">新着商品</h2>
       <div class=row >
         <% @items.each do |item| %>
-          <div class="col-lg-6">
+          <div class="col-md-5 mr-3">
             <%= link_to ec_item_path(item) do %>
-              <%= attachment_image_tag item, :image, :size => "230x230" %>
+              <%= attachment_image_tag item, :image, class: "img-responsive" %>
             <% end %>
             <p>
               <%= item.name %><br>
