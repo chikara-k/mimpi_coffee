@@ -70,7 +70,7 @@
 
 ### テスト
 - RSpec
-- GitHubActions(CI/CD)
+- GitHubActions(CI)
 
 ## 使用素材
 illustAC https://www.ac-illust.com/
