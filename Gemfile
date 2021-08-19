@@ -77,6 +77,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
 gem 'rubocop-airbnb'
+gem 'flag_icon_css_rails'
 
 gem 'dotenv-rails'
 group :production do
